@@ -3,13 +3,14 @@ import Navbar from './navbar';
 import Footer from './footer';
 
 export default function Layout({ children }) {
-    const pagina=process.env.NEXT_PUBLIC_SITE_NAME ;
+    
+    const pagina = process.env.NEXT_PUBLIC_SITE_NAME || "El Motorista";
     const siteClass = `site-${pagina.replace(/\s+/g, '')}`;
-return (
-<div className={`${styles.layout} ${siteClass}`}>
-    <Navbar />
-    <main className={styles.content}>{children}</main>
-    <Footer />
-</div>
-);
+    return (
+        <div className={`${styles.layout} ${siteClass}`}>
+            <Navbar />
+            <main className={styles.content}>{children}</main>
+            <Footer />
+        </div>
+    );
 }
