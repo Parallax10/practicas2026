@@ -1,0 +1,94 @@
+.nombre{
+    margin-top: 50;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+.marca{
+    margin-top: 25;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+
+}
+
+.imagenes{
+    cursor: pointer;
+    margin-top: 50;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.precio{
+    color: rgb(150, 201, 74);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15;
+}
+.maps{
+    display: flex;
+    flex-direction: column; 
+    justify-self: center;
+    min-width:550;
+}
+@media (min-width: 768px) {
+    
+    .imagenes{
+        position: absolute;
+        margin-top: 120;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    .precio{
+    color: rgb(150, 201, 74);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15;
+    }
+    .maps{
+        display: flex;
+        flex-direction: column; 
+        justify-self: center;
+        min-width:550;
+    }
+    .nombre{
+        margin-top: 50;
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .marca{
+        margin-top: 25;
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+.lightbox {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+
+img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.arrow,
+.cerrar {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.izquierda { left: 20px; }
+.derecha { right: 20px; }
+.cerrar { top: 20px; right: 20px; }
+}
