@@ -1,5 +1,5 @@
 "use client";
-import styles from "../../styles/unicos.module.scss";
+import { themeStyles as styles } from '../../config/index';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -53,13 +53,13 @@ export default function DetallesMotos() {
         }
     }
     return(
-        <div className={styles.maps}>
+        <div className={styles.mapsDetalle}>
             <head>
                 <title>{moto.title + " |El Motorista"}</title>
             </head>
-            <p className={styles.nombre}>{moto.title}</p>
+            <p className={styles.nombreDetalle}>{moto.title}</p>
             
-            <div className={styles.imagenes}>
+            <div className={styles.imagenesDetalle}>
                 <img src={moto.images[0]}  onClick={()=>setGrande(true)}/>
                 {grande &&(
                     <div className={styles.lightbox}>
@@ -77,9 +77,9 @@ export default function DetallesMotos() {
                 )}
             </div>
             
-            <p className={styles.marca}>Permiso {moto.license}</p>
-            <p className={styles.marca}>{moto.type}: {moto.year}</p>
-            <p className={styles.precio}>{moto.price}€</p>
+            <p className={styles.marcaDetalle}>Permiso {moto.license}</p>
+            <p className={styles.marcaDetalle}>{moto.type}: {moto.year}</p>
+            <p className={styles.precioDetalle}>{moto.price}€</p>
         </div>
     );
 }

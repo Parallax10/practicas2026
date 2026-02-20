@@ -18,7 +18,7 @@ else if (profile === 'LolaMoto') {
 } 
 else {
   exportConfig = `import { ElMotorista } from './elMotorista';\nexport const config = ElMotorista;\n`;
-  exportCSS = `export { default as themeStyles } from '../styles/elMotorista.module.scss';\n`;
+  exportCSS = `export { default as themeStyles } from '../styles/motorista.module.scss';\n`;
 }
 
 const finalFileContent = `${exportConfig}\n${exportCSS}`;

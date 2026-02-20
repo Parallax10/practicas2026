@@ -1,5 +1,5 @@
 "use client";
-import styles from "../../styles/unicos.module.scss";
+import { themeStyles as styles } from '../../config/index';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -51,14 +51,14 @@ export default function detallesProductos() {
     }
 
     return(
-        <div className={styles.maps}>
+        <div className={styles. mapsDetalle}>
             <head>
                 <title>{producto.title + " |El Motorista"}</title>
             </head>
 
             
-            <p className={styles.nombre}>{producto.title}</p>
-            <div className={styles.imagenes}>
+            <p className={styles.nombreDetalle}>{producto.title}</p>
+            <div className={styles.imagenesDetalle}>
                 <img src={producto.images[0]}  onClick={()=>setGrande(true)}/>
                 {grande &&(
                     <div className={styles.lightbox}>
@@ -75,9 +75,9 @@ export default function detallesProductos() {
                     </div>
                 )}
             </div>
-            <p className={styles.marca}>{producto.brand.name}</p>
-            <p className={styles.marca}>{producto.categories.name}</p>
-            <p className={styles.precio}>{producto.price}€</p>
+            <p className={styles.marcaDetalle}>{producto.brand.name}</p>
+            <p className={styles.marcaDetalle}>{producto.categories.name}</p>
+            <p className={styles.precioDetalle}>{producto.price}€</p>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import Link from "next/link";
-import styles from "../styles/objetos.module.scss";
+import { themeStyles as styles } from '../config/index';
 import { fetchMotos } from "./store/slices/motoSlice";
 import { useAppSelector, useAppDispatch } from "./store/hooks";
 

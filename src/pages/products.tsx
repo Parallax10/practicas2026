@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../styles/objetos.module.scss";
+import { themeStyles as styles } from '../config/index';
 import { useAppSelector, useAppDispatch } from "./store/hooks";
 import { fetchProductos } from "./store/slices/prodSlice";
 

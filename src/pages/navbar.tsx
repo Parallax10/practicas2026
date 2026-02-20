@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from "react";
-import styles from "../styles/navbar.module.scss";
+import { themeStyles as styles } from '../config/index';
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { logout } from './store/slices/userSlice';
 import { remoteLog } from './utils/logger';
-export default function Navbar({ config }) {
+export default function Navbar() {
     const usuario = useAppSelector((state) => state.user?.nombre);
     const { t, i18n } = useTranslation();
     const pagina = process.env.NEXT_PUBLIC_APP_PROFILE;
