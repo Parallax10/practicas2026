@@ -9,7 +9,6 @@
     text-align: center;
     font-weight: bold;
     font-size: 13px;
-
 }
 
 .imagenes{
@@ -32,7 +31,6 @@
     min-width:550;
 }
 @media (min-width: 768px) {
-    
     .imagenes{
         position: absolute;
         margin-top: 90;
@@ -74,7 +72,6 @@ background: rgba(0,0,0,0.8);
 display: flex;
 justify-content: center;
 align-items: center;
-
 .arrow,
     .cerrar {
         position: absolute;

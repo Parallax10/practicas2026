@@ -10,12 +10,10 @@
     }
     :global(.site-Intermoto) & {
         background-color: #534f4f;
-
     }
 }
 .nombre{
     text-align: center;
-
 }
 .imagen{
     text-align: center;
@@ -34,7 +32,6 @@
     }
     :global(.site-Intermoto) & {
         background-color: #969191;
-
     }
 }
 .maps{
@@ -42,9 +39,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto; 
     gap: 10px; 
-
 }
 .lista{
 list-style: none;
-
 }
