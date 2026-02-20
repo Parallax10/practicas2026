@@ -60,10 +60,9 @@ export default function DetallesMotos() {
             <p className={styles.nombre}>{moto.title}</p>
             
             <div className={styles.imagenes}>
-                <img src={moto.images[0]} width={100} onClick={()=>setGrande(true)}/>
+                <img src={moto.images[0]}  onClick={()=>setGrande(true)}/>
                 {grande &&(
                     <div className={styles.lightbox}>
-                        <p>{indiceImagenes}</p>
                         <button className={styles.cerrar} onClick={()=>setGrande(false)}>
                             X
                         </button>

@@ -17,13 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const storeRef = useRef<AppStore>(null);
   const persistorRef = useRef<any>(null);
   
-  
   const [config, setConfig] = useState<AppConfig | null>(null);
-
   useEffect(() => {
-    
     getDynamicConfig().then(res => setConfig(res));
-
     const handleRouteChange = (url: string) => {
       remoteLog('info', `Cambiando de pagina a ${url}`);
     };

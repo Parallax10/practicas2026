@@ -14,10 +14,10 @@
 
 .imagenes{
     cursor: pointer;
-    margin-top: 50;
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    max-height: 400;
 }
 .precio{
     color: rgb(150, 201, 74);
@@ -35,10 +35,12 @@
     
     .imagenes{
         position: absolute;
-        margin-top: 120;
+        margin-top: 90;
         display: flex;
         flex-direction: column;
-        justify-content: left;
+        justify-content: left ;
+        max-width: 250;
+        margin-left: -160;
     }
     .precio{
     color: rgb(150, 201, 74);
@@ -73,22 +75,26 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
 .arrow,
-.cerrar {
-    position: absolute;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.izquierda { left: 20px; }
-.derecha { right: 20px; }
-.cerrar { top: 20px; right: 20px; }
+    .cerrar {
+        position: absolute;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+    }
+    .izquierda 
+    { 
+        left: 20px; 
+        margin: 5;
+    }
+    .derecha { 
+        right: 20px; 
+        margin: 5;
+    }
+    .cerrar { 
+        top: 20px; 
+        right: 20px; 
+    }
 }

@@ -1,5 +1,4 @@
 "use client";
-import {Producto} from "../../types"
 import styles from "../../styles/unicos.module.scss";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -60,10 +59,9 @@ export default function detallesProductos() {
             
             <p className={styles.nombre}>{producto.title}</p>
             <div className={styles.imagenes}>
-                <img src={producto.images[0]} width={100} onClick={()=>setGrande(true)}/>
+                <img src={producto.images[0]}  onClick={()=>setGrande(true)}/>
                 {grande &&(
                     <div className={styles.lightbox}>
-                        <p>{indiceImagenes}</p>
                         <button className={styles.cerrar} onClick={()=>setGrande(false)}>
                             X
                         </button>

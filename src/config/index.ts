@@ -3,10 +3,10 @@ export interface AppConfig {
     allowedPages: string[];
 }
 
-const PROFILE_NAME = process.env.NEXT_PUBLIC_APP_PROFILE || "El Motorista";
+const site = process.env.NEXT_PUBLIC_APP_PROFILE || "El Motorista";
 
 export const getDynamicConfig = async (): Promise<AppConfig> => {
-    switch (PROFILE_NAME) {
+    switch (site) {
         case "LolaMoto":
             const lola = await import('./lolamoto');
             return lola.lolaMoto;

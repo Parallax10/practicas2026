@@ -17,9 +17,6 @@ export default function Ejercicios() {
     const [contador, setContador] = useState(0);
     const [cantidad, setCantidad] = useState(0);
     const [msegundos, setMsegundos] = useState(0);
-
-    
-
     
     useEffect(() => {
         const userLabel = usuario || "Invitado";
