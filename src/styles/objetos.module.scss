@@ -5,8 +5,11 @@ min-width: 500;
 padding: 50;
 background-color:#8f8a8ac7;
 color: #ededed;
-
+    
 }
+:global(.site-ElMotorista).item{
+        background-color: black;
+    }
 .nombre{
     text-align: center;
 

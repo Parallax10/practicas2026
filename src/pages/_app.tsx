@@ -44,7 +44,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <Provider store={storeRef.current}>
       <PersistGate loading={null} persistor={persistorRef.current}>
         <div className={config.themeClass}>
-          <Layout>
+          {/*configuracion del estilo*/}
+          <Layout config={config}>
             {isAllowed || allAllowed ? (
               <Component {...pageProps} />
             ) : (
