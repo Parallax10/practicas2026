@@ -10,7 +10,7 @@ const profileMap: Record<string, any> = {
     "El Motorista": ElMotorista
 };
 
-const currentKey = process.env.NEXT_PUBLIC_SITE_NAME || "El Motorista";
+const currentKey = process.env.NEXT_PUBLIC_SITE_NAME;
 
 export const config = profileMap[currentKey] || ElMotorista;
 

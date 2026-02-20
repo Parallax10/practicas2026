@@ -12,7 +12,7 @@ export default function Ejercicios() {
     const { t } = useTranslation();
     const usuario = useAppSelector((state) => state.user?.nombre);
     
-    const pagina = process.env.NEXT_PUBLIC_APP_PROFILE || "El Motorista";
+    const pagina = process.env.NEXT_PUBLIC_APP_PROFILE;
 
     const [contador, setContador] = useState(0);
     const [cantidad, setCantidad] = useState(0);

@@ -8,7 +8,7 @@ import { remoteLog } from './utils/logger';
 export default function Navbar() {
     const usuario = useAppSelector((state) => state.user?.nombre);
     const { t, i18n } = useTranslation();
-    const pagina = process.env.NEXT_PUBLIC_APP_PROFILE || "El Motorista";
+    const pagina = process.env.NEXT_PUBLIC_APP_PROFILE;
     const [catalogos, setCatalogos] = useState(false);
     useEffect(() => {
         if (pagina === "El Motorista") {

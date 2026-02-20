@@ -44,12 +44,26 @@ a {
   }
 }
 
+/* src/styles/globals.scss */
+
+// Definición para Lola Moto
 .site-LolaMoto {
-  font-family: 'Shadows Into Light',sans-serif !important;
-  }
+    // Aplicamos a la clase y a TODO lo que contenga
+    &, * {
+        font-family: 'Shadows Into Light', sans-serif !important;
+    }
+}
+
+// Definición para Intermoto
 .site-Intermoto {
-  font-family: 'Bitcount Grid Double', sans-serif !important;
-  }
+    &, * {
+        font-family: 'Bitcount Grid Double', sans-serif !important;
+    }
+}
+
+// Definición para El Motorista
 .site-ElMotorista {
-  font-family: 'Google Sans', sans-serif !important;
+    &, * {
+        font-family: 'Google Sans', sans-serif !important;
+    }
 }

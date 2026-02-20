@@ -3,8 +3,8 @@ export interface AppConfig {
     allowedPages: string[];
 }
 
-const site = process.env.NEXT_PUBLIC_APP_PROFILE || "El Motorista";
-
+const site = process.env.NEXT_PUBLIC_APP_PROFILE;
+console.log("Sitio detectado:", site);
 export const getDynamicConfig = async (): Promise<AppConfig> => {
     switch (site) {
         case "LolaMoto":
