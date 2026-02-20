@@ -6,18 +6,31 @@
     text-align: center;
     align-items: center;
     gap: 50;
+    :global(.site-LolaMoto) & {
+        background-color: #244169;
+    }
+    :global(.site-Intermoto) & {
+        background-color: #d1d1d1;
+    }
 }
 .imagen{
     margin-left: 25;
+    
 
 }
 .text{
     color: black;
     font-weight: bold;
     font-size: large;
+    :global(.site-LolaMoto) & {
+        color: white;
+    }
 }
 .link{
     color: black;
     font-weight: bold;
     font-size: large;
+        :global(.site-LolaMoto) & {
+        color: white;
+    }
 }

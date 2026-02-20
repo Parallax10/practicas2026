@@ -5,13 +5,13 @@ import Link from "next/link";
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { logout } from './store/slices/userSlice';
 import { remoteLog } from './utils/logger';
-export default function Navbar() {
+export default function Navbar({ config }) {
     const usuario = useAppSelector((state) => state.user?.nombre);
     const { t, i18n } = useTranslation();
     const pagina = process.env.NEXT_PUBLIC_APP_PROFILE;
     const [catalogos, setCatalogos] = useState(false);
     useEffect(() => {
-        if (pagina === "El Motorista") {
+        if (pagina === "ElMotorista") {
             setCatalogos(true);
         }
         }, [pagina]);

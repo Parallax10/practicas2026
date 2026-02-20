@@ -8,9 +8,9 @@ export default  function Layout({ children, config }) {
 
     return (
         <div className={`${styles.layout} ${config?.themeClass || ''}`}>
-            <Navbar />
+            <Navbar config={config} />
             <main className={styles.content}>{children}</main>
-            <Footer />
+            <Footer config={config} />
         </div>
     );
 }

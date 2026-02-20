@@ -1,15 +1,18 @@
-.item{
-justify-items: center;
-min-height: 150px;
-min-width: 500;
-padding: 50;
-background-color:#8f8a8ac7;
-color: #ededed;
-    
-}
-:global(.site-ElMotorista).item{
-        background-color: black;
+.item {
+    justify-items: center;
+    min-height: 150px;
+    min-width: 500px;
+    padding: 50px;
+    background-color: #8f8a8ac7;
+    color: #ededed;
+    :global(.site-LolaMoto) & {
+        background-color:#385781;
     }
+    :global(.site-Intermoto) & {
+        background-color: #534f4f;
+
+    }
+}
 .nombre{
     text-align: center;
 
@@ -26,6 +29,13 @@ color: #ededed;
 }
 .item:hover{
     background-color: #8f8a8a;
+    :global(.site-LolaMoto) & {
+        background-color:#3f659b;
+    }
+    :global(.site-Intermoto) & {
+        background-color: #969191;
+
+    }
 }
 .maps{
     display: grid;

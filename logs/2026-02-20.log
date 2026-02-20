@@ -49,3 +49,46 @@
 [2026-02-20T10:23:12.415Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
 [2026-02-20T10:23:12.419Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
 [2026-02-20T10:23:21.276Z] [INFO] [Origen: /catalogues]: Cambiando de pagina a /products 
+[2026-02-20T10:45:04.645Z] [INFO] [Origen: /products]: Cambiando de pagina a / 
+[2026-02-20T10:45:04.720Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T10:45:04.723Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T10:58:11.425Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:58:14.342Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:58:14.346Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:58:16.880Z] [INFO] [Origen: /]: Cambiando de pagina a /login 
+[2026-02-20T10:58:19.902Z] [INFO] [Origen: /login]: Cambiando de pagina a / 
+[2026-02-20T10:58:19.911Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:58:19.915Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:59:15.158Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:59:15.162Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:59:22.084Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T10:59:22.090Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T11:00:04.141Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de Intermoto 
+[2026-02-20T11:00:07.041Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de Intermoto 
+[2026-02-20T11:00:07.056Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de Intermoto 
+[2026-02-20T11:03:01.002Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T11:03:08.105Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:03:10.610Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:03:10.627Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:03:57.555Z] [INFO] [Origen: /]: Cambiando de pagina a / 
+[2026-02-20T11:03:59.593Z] [INFO] [Origen: /]: Cambiando de pagina a /login 
+[2026-02-20T11:04:31.105Z] [INFO] [Origen: /login]: Usuario Paco ha iniciado sesión 
+[2026-02-20T11:04:31.115Z] [INFO] [Origen: /login]: Cambiando de pagina a / 
+[2026-02-20T11:04:31.217Z] [INFO] [Origen: /]: Usuario Paco accedió a la página de LolaMoto 
+[2026-02-20T11:04:31.224Z] [INFO] [Origen: /]: Usuario Paco accedió a la página de LolaMoto 
+[2026-02-20T11:04:41.026Z] [INFO] [Origen: /]: Usuario Paco accedió a la página de ElMotorista 
+[2026-02-20T11:04:43.600Z] [INFO] [Origen: /]: Usuario Paco accedió a la página de ElMotorista 
+[2026-02-20T11:04:43.623Z] [INFO] [Origen: /]: Usuario Paco accedió a la página de ElMotorista 
+[2026-02-20T11:08:01.795Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T11:10:47.324Z] [INFO] [Origen: /]: Cambiando de pagina a / 
+[2026-02-20T11:10:55.545Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:10:59.009Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:10:59.020Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:13:47.807Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:13:47.819Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de LolaMoto 
+[2026-02-20T11:13:56.331Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de Intermoto 
+[2026-02-20T11:13:58.352Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de Intermoto 
+[2026-02-20T11:13:58.363Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de Intermoto 
+[2026-02-20T11:16:48.754Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T11:16:52.975Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
+[2026-02-20T11:16:52.984Z] [INFO] [Origen: /]: Usuario Invitado accedió a la página de ElMotorista 
