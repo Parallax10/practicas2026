@@ -30,5 +30,6 @@ export default function Login() {
                 <p>{error}</p>
                 <button onClick={()=>validarUsuario()}>Iniciar Sesion</button>
             </div>
-        </div>);
+        </div>
+    );
 }

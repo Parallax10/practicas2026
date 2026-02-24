@@ -21,12 +21,12 @@ else {
   exportCSS = `export { default as themeStyles } from '../styles/motorista.module.scss';\n`;
 }
 
-const finalFileContent = `${exportConfig}\n${exportCSS}`;
-const targetPath = path.resolve('./src/config/index.ts');
+const contenidoIndex = `${exportConfig}\n${exportCSS}`;
+const ruta = path.resolve('./src/config/index.ts');
 
 try {
-  fs.writeFileSync(targetPath, finalFileContent, 'utf-8');
-  console.log(`index.ts reescrito para ${profile}.`);
+  fs.writeFileSync(ruta, contenidoIndex, 'utf-8');
+  console.log(`index.ts cambiado para ${profile}.`);
 } catch (error) {
   console.error(" Error al sobrescribir index.ts:", error);
 }

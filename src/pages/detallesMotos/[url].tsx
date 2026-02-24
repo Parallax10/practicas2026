@@ -42,7 +42,7 @@ export default function DetallesMotos() {
             await remoteLog('info', `Usuario Invitado pasó a la imagen anterior de la moto ${moto.title}`);
         }
         if (!moto) return;
-        if(indiceImagenes===moto.images.length-1){
+        if(indiceImagenes===moto.images.length){
             setIndiceImagenes(0)
         }
         else if(indiceImagenes===0){
@@ -52,6 +52,14 @@ export default function DetallesMotos() {
             setIndiceImagenes(indiceImagenes-1)
         }
     }
+    async function cambiarZoom(): Promise<void> {
+        if (usuario) {
+            await remoteLog('info', `Usuario ${usuario} cambió el zoom de la imagen de la moto ${moto.title}`);
+        } else {
+            await remoteLog('info', `Usuario Invitado cambió el zoom de la imagen de la moto ${moto.title}`);
+        }
+        setGrande(!grande);
+    }
     return(
         <div className={styles.mapsDetalle}>
             <head>
@@ -60,10 +68,10 @@ export default function DetallesMotos() {
             <p className={styles.nombreDetalle}>{moto.title}</p>
             
             <div className={styles.imagenesDetalle}>
-                <img src={moto.images[0]}  onClick={()=>setGrande(true)}/>
+                <img src={moto.images[0]}  onClick={()=>cambiarZoom()}/>
                 {grande &&(
                     <div className={styles.lightbox}>
-                        <button className={styles.cerrar} onClick={()=>setGrande(false)}>
+                        <button className={styles.cerrar} onClick={()=>cambiarZoom()}>
                             X
                         </button>
                         <button className={styles.izquierda} onClick={()=>anterior()}>

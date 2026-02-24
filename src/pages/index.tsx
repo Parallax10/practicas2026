@@ -42,8 +42,6 @@ export default function Ejercicios() {
         await remoteLog('info', `Usuario ${usuario || "Invitado"} programó incremento en ${ms} ms`);
     }
 
-    
-
     if (pagina === "Intermoto") {
         return (
             <>
@@ -62,32 +60,20 @@ export default function Ejercicios() {
         );
     }
 
-    if (pagina === "MotoSergio") {
-        return (
-            <>
-                <Head><title>Inicio | Moto Sergio</title></Head>
-                <Catalogues />
-            </>
-        );
-    }
-
     return (
         <div>
             <Head><title>Inicio | El Motorista</title></Head>
             <p>{t("contador_texto", { valor: contador })}</p>
-            <button onClick={aumentar1}>+1</button>
-            <button onClick={reducir1}>-1</button>
+            <button onClick={() => aumentar1()}>+1</button>
+            <button onClick={() => reducir1()}>-1</button>
             <br />
-            <input 
-                value={cantidad} 
-                type="number" 
-                onChange={(e) => setCantidad(Number(e.target.value))} 
-                onKeyDown={(e) => {
-                    if (e.key === "Enter") setContador(contador + cantidad);
+            <input value={cantidad} type="number" onChange={(e) => setCantidad(Number(e.target.value))} 
+            onKeyDown={(e) => {
+                if (e.key === "Enter") setContador(contador + cantidad);
                 }} 
             />
             <br />
-            <button onClick={sumar1msc}>+1 Async</button>
+            <button onClick={() => sumar1msc()}>+1 Async</button>
         </div>
     );
 }

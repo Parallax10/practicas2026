@@ -51,12 +51,10 @@ export default function detallesProductos() {
     }
 
     return(
-        <div className={styles. mapsDetalle}>
+        <div className={styles.mapsDetalle}>
             <head>
                 <title>{producto.title + " |El Motorista"}</title>
             </head>
-
-            
             <p className={styles.nombreDetalle}>{producto.title}</p>
             <div className={styles.imagenesDetalle}>
                 <img src={producto.images[0]}  onClick={()=>setGrande(true)}/>

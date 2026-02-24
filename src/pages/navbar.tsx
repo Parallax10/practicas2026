@@ -15,14 +15,14 @@ export default function Navbar() {
             setCatalogos(true);
         }
         }, [pagina]);
-    const cambiarIdioma = (lenguaje) => {
+    const cambiarIdioma = (idioma) => {
         if (usuario) {
-            remoteLog(`info`, `${usuario} ha cambiado el idioma a ${lenguaje}`);
+            remoteLog(`info`, `${usuario} ha cambiado el idioma a ${idioma}`);
         }
         else {
-            remoteLog(`info`, `Usuario invitado ha cambiado el idioma a ${lenguaje}`);
+            remoteLog(`info`, `Usuario invitado ha cambiado el idioma a ${idioma}`);
         }
-        i18n.changeLanguage(lenguaje);
+        i18n.changeLanguage(idioma);
     };
     const dispatch = useAppDispatch();
     function cerrarSesion(){
@@ -41,7 +41,6 @@ return (
         <Link href={"http://localhost:3000/catalogues"} className={styles.link}>{t("catalogo")}</Link>
     ):<></>
     }
-    
     {usuario ?     
         <div>
             <p className={styles.text}>Hola: {usuario}</p> 
@@ -50,7 +49,6 @@ return (
     :<Link href={"http://localhost:3000/login"} className={styles.link}>{t("inicioSesion")}</Link>}
     
     <button onClick={() => cambiarIdioma('es')}className={i18n.language === 'es' ? styles.active : styles.btn}>ES</button>
-
     <button onClick={() => cambiarIdioma('en')}className={i18n.language === 'en' ? styles.active : styles.btn}>EN</button>
 </div>
 );

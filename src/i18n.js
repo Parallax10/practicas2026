@@ -27,13 +27,13 @@ translation: {
 }
 };
 i18n
-.use(LanguageDetector) // Detecta el idioma automáticamente
-.use(initReactI18next) // Pasa i18n a react-i18next
+.use(LanguageDetector) 
+.use(initReactI18next) 
 .init({
 resources,
-fallbackLng: "es", // Idioma por defecto si no detecta nada
+fallbackLng: "es", 
 interpolation: {
-    escapeValue: false // React ya protege contra XSS
+    escapeValue: false 
 }
 });
 
