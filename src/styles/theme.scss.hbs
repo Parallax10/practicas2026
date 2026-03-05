@@ -2,87 +2,94 @@
 
 $primary: {{theme.colors.primary}};
 $secondary: {{theme.colors.secondary}};
-$text: {{theme.colors.text}};
 $bg-body: {{theme.colors.bg_body}};
 $border: {{theme.colors.border}};
-$font-main: {{{theme.fonts.main}}};
 
-:global(body) {
-    margin: 0; font-family: $font-main; background-color: $bg-body; color: $text;
-}
+:global(body) { margin: 0; font-family: {{{theme.fonts.main}}}; background-color: $bg-body; color: #333; }
 
 /* ================== NAVBAR ================== */
-.navbar {
+/* ESTILO 1: RÉPLICA EL MOTORISTA */
+.navbar_1 {
     background-color: #ffffff; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.topBar {
-    background-color: #000000; color: #ffffff; font-size: 11px; padding: 8px 0; font-weight: 500; letter-spacing: 0.5px;
-}
-.topBarContainer {
-    max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between;
-}
-.mainHeader {
-    max-width: 1400px; margin: 0 auto; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center;
-}
-.logo {
-    font-size: 32px; font-weight: 900; color: $primary; text-transform: uppercase; letter-spacing: -1px; cursor: pointer;
-}
-.search {
-    flex: 1; max-width: 550px; display: flex; margin: 0 40px;
-    input { width: 100%; padding: 12px 15px; border: 2px solid $primary; border-radius: 4px 0 0 4px; outline: none; font-size: 13px; }
-    button { background-color: $primary; color: #ffffff; border: none; padding: 0 25px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: background 0.2s; &:hover { background-color: #c2000d; } }
-}
-.icons {
-    display: flex; gap: 25px; font-size: 12px; font-weight: 600; color: #333;
-    .iconBox { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: color 0.2s; &:hover { color: $primary; } .iconEmoji { font-size: 22px; margin-bottom: 2px; } }
-}
-.navMenu { border-top: 1px solid #eeeeee; background-color: #ffffff; }
-.navMenuContainer {
-    max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; gap: 30px;
-    span { padding: 15px 0; font-size: 14px; font-weight: 700; color: #222222; text-transform: uppercase; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; &:hover { color: $primary; border-bottom: 3px solid $primary; } }
+    .topBar { background-color: #000000; color: #ffffff; font-size: 11px; padding: 8px 0; font-weight: 500; letter-spacing: 0.5px; }
+    .topBarContainer { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; }
+    .mainHeader { max-width: 1400px; margin: 0 auto; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 32px; font-weight: 900; color: $primary; text-transform: uppercase; letter-spacing: -1px; cursor: pointer; }
+    .search {
+        flex: 1; max-width: 550px; display: flex; margin: 0 40px;
+        input { width: 100%; padding: 12px 15px; border: 2px solid $primary; border-radius: 4px 0 0 4px; outline: none; font-size: 13px; }
+        button { background-color: $primary; color: #ffffff; border: none; padding: 0 25px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: background 0.2s; &:hover { background-color: #c2000d; } }
+    }
+    .icons { display: flex; gap: 25px; font-size: 12px; font-weight: 600; color: #333; .iconBox { display: flex; flex-direction: column; align-items: center; cursor: pointer; &:hover { color: $primary; } .iconEmoji { font-size: 22px; margin-bottom: 2px; } } }
+    .navMenu { border-top: 1px solid #eeeeee; background-color: #ffffff; }
+    .navMenuContainer { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; gap: 30px; span { padding: 15px 0; font-size: 14px; font-weight: 700; color: #222222; text-transform: uppercase; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; &:hover { color: $primary; border-bottom: 3px solid $primary; } } }
 }
 
-/* ================== LAYOUT & SIDEBAR ================== */
-.pageLayout { display: flex; gap: 30px; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-.sidebar {
-    width: 250px; flex-shrink: 0;
+/* ESTILO 2: ALTERNATIVO MINIMALISTA */
+.navbar_2 {
+    background: #111; color: #fff; text-align: center; padding: 30px 20px;
+    .logo { font-size: 45px; font-weight: 900; color: #fff; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; cursor: pointer;}
+    .search { max-width: 600px; margin: 0 auto 20px; display: flex; input { width: 100%; padding: 15px; border: none; border-radius: 30px 0 0 30px; outline: none; color: #000; } button { background: $primary; color: #fff; border: none; padding: 0 30px; border-radius: 0 30px 30px 0; font-weight: bold; cursor: pointer;} }
+    .navMenu { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; color: #aaa; span { cursor: pointer; &:hover { color: $primary; } } }
+}
+
+/* ================== LAYOUT & FILTROS ================== */
+/* ESTILO 1: RÉPLICA EL MOTORISTA (SIDEBAR IZQUIERDO) */
+.pageLayout_1 { display: flex; gap: 30px; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
+.sidebar_1 {
+    width: 260px; flex-shrink: 0; font-size: 14px;
+    .filterHeader { margin-bottom: 20px; font-weight: 900; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 10px; font-size: 16px;}
     .filterBlock {
         margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 15px;
-        h4 { font-size: 15px; font-weight: 700; text-transform: uppercase; margin: 0 0 15px 0; color: #111; }
-        .filterList {
-            max-height: 200px; overflow-y: auto;
-            label { display: flex; align-items: center; gap: 10px; font-size: 13px; margin-bottom: 10px; cursor: pointer; color: #555; &:hover { color: $primary; } }
-        }
-        .rangeInputs {
-            display: flex; gap: 10px; align-items: center;
-            input { width: 45%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; outline: none; &:focus { border-color: $primary; } }
-        }
+        h4 { font-size: 13px; font-weight: 700; margin: 0 0 15px 0; color: #111; text-transform: uppercase; }
+        .filterList { max-height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; label { display: flex; align-items: center; gap: 8px; cursor: pointer; color: #555; font-size: 13px; &:hover { color: #000; } input { accent-color: $primary; } } }
+        .rangeInputs { display: flex; gap: 10px; align-items: center; input { width: 100%; padding: 8px; border: 1px solid #ddd; font-size: 12px; outline: none; &:focus { border-color: $primary; } } }
     }
 }
 
-/* ================== GRID & TARJETA PRODUCTO ================== */
-.productGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; flex: 1; align-content: start;}
+/* ESTILO 2: ALTERNATIVO (TOPBAR DE SELECTS) */
+.pageLayout_2 { display: flex; flex-direction: column; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
+.topFilters_2 {
+    display: flex; gap: 20px; overflow-x: auto; padding: 20px; background: #fff; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    .filterBlock { min-width: 180px; h4 { font-size: 12px; color: #888; margin: 0 0 10px; text-transform: uppercase; } select { width: 100%; padding: 10px; border: 1px solid $border; border-radius: 4px; outline: none; } }
+}
 
-.card {
-    background: transparent; border: 1px solid transparent; padding: 15px;
-    display: flex; flex-direction: column; position: relative; cursor: pointer;
-    transition: all 0.2s ease-in-out; text-decoration: none; color: inherit;
-    border-radius: 4px;
-    
-    &:hover { background: #fff; border-color: $border; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+/* ================== GRID & TARJETAS ================== */
+/* ESTILO 1: RÉPLICA EL MOTORISTA (GRID VERTICAL) */
+.productGrid_1 { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; flex: 1; align-content: start; }
+.card_1 {
+    background-color: transparent; border: 1px solid transparent; padding: 15px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: all 0.2s ease-in-out; cursor: pointer;
+    &:hover { background-color: #ffffff; border-color: #e0e0e0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .badgeState { font-size: 11px; font-weight: 800; color: #888; text-transform: uppercase; margin-bottom: 5px; }
+    .imgBox { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; img { max-height: 100%; max-width: 100%; object-fit: contain; } }
+    .title { font-size: 15px; font-weight: 700; color: #000; margin: 0 0 10px 0; line-height: 1.3; text-transform: uppercase; height: 40px; overflow: hidden; }
+    .price { font-size: 22px; font-weight: 900; color: $primary; margin-bottom: 5px; }
+    .specs { font-size: 13px; color: #666; margin-top: auto; }
+}
 
-    .badge { position: absolute; top: 15px; left: 15px; background: $primary; color: #fff; padding: 4px 10px; font-size: 10px; font-weight: 800; text-transform: uppercase; z-index: 2; border-radius: 2px;}
-    .imgBox { height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; img { max-height: 100%; object-fit: contain; } }
-    .motoInfo { font-size: 12px; color: #777; display: flex; justify-content: space-between; margin-bottom: 5px; text-transform: uppercase; }
-    .title { font-size: 14px; font-weight: 700; margin: 0 0 15px 0; line-height: 1.4; height: 40px; overflow: hidden; color: #222; }
-    .price { font-size: 24px; font-weight: 900; color: $primary; margin-top: auto; }
+/* ESTILO 2: ALTERNATIVO (LISTA HORIZONTAL) */
+.productGrid_2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.card_2 {
+    display: flex; gap: 20px; background: #fff; padding: 15px; border-radius: 8px; text-decoration: none; color: inherit; align-items: center; border: 1px solid $border;
+    &:hover { border-color: $primary; }
+    .imgBox { width: 150px; height: 150px; flex-shrink: 0; background: #f9f9f9; padding: 10px; border-radius: 4px; img { width: 100%; height: 100%; object-fit: contain; } }
+    .infoBox { flex: 1; .title { font-size: 18px; font-weight: 900; margin: 0 0 10px; } .price { font-size: 24px; color: $primary; font-weight: bold; } }
 }
 
 /* ================== FOOTER ================== */
-.footer {
+/* ESTILO 1: RÉPLICA EL MOTORISTA (4 COLUMNAS) */
+.footer_1 {
     background: #1a1a1a; color: #ccc; padding: 60px 20px 30px; margin-top: 60px; font-size: 13px;
     .container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
     h4 { color: #fff; font-size: 16px; margin-bottom: 20px; text-transform: uppercase; }
     ul { list-style: none; padding: 0; margin: 0; li { margin-bottom: 10px; cursor: pointer; &:hover { color: #fff; } } }
     .bottomBar { grid-column: 1 / -1; border-top: 1px solid #333; margin-top: 40px; padding-top: 20px; text-align: center; }
 }
+
+/* ESTILO 2: ALTERNATIVO MINIMALISTA */
+.footer_2 {
+    background: $primary; color: #fff; padding: 60px 20px; text-align: center; margin-top: 60px;
+    .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 20px 0; font-weight: bold; font-size: 14px; text-transform: uppercase; cursor: pointer; span:hover { text-decoration: underline; } }
+}
+
+/* (Deja aquí el resto de tu código de "Detalles de Moto" y "Detalles de Productos" intacto) */
