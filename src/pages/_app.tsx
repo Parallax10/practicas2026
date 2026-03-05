@@ -1,4 +1,3 @@
-"use client"
 import { useRouter } from 'next/router';
 import { useRef } from 'react'; 
 import type { AppProps } from 'next/app';
@@ -7,14 +6,12 @@ import { makeStore, AppStore } from './store/store';
 import persistStore from 'redux-persist/lib/persistStore';
 import { PersistGate } from 'redux-persist/integration/react';
 
-// LINEA 11 CORREGIDA: Importamos desde la ruta correcta donde el script genera el index
+// Importaciones dinámicas generadas
 import { config, themeStyles } from '../config/index';
-
+import ErrorPage from './404';
 import Layout from "./layout";
 import "../i18n";
 import "../styles/globals.scss";
-
-// Importamos los estilos dinámicos para asegurar que se carguen en el bundle
 import "../styles/dynamicTheme.module.scss"; 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -28,25 +25,17 @@ export default function App({ Component, pageProps }: AppProps) {
     persistorRef.current = persistStore(storeInstance);
   }
 
-  // Verificación de seguridad por si config o allowedPages son undefined
-  const allowedPages = config?.allowedPages || ["*"];
-  const allAllowed = allowedPages.includes("*");
-  const isAllowed = allowedPages.includes(router.pathname);
+  // Casting a 'any' para evitar el error de propiedad inexistente en el tipado automático del JSON
+  const siteConfig = config as any;
+  const allowedPages = siteConfig?.allowedPages || ["*"];
+  const isAllowed = allowedPages.includes("*") || allowedPages.includes(router.pathname);
 
   return (
     <Provider store={storeRef.current}>
       <PersistGate loading={null} persistor={persistorRef.current}>
-        {/* Usamos el nombre de clase generado dinámicamente */}
-        <div className={themeStyles?.contenedorPrincipal || 'main-container'}>
+        <div className={themeStyles?.contenedorPrincipal}>
           <Layout>
-            {isAllowed || allAllowed ? (
-              <Component {...pageProps} />
-            ) : (
-              <div style={{ padding: '50px', textAlign: 'center' }}>
-                <h1>Acceso no permitido</h1>
-                <p>Esta página no está habilitada para el perfil actual.</p>
-              </div>
-            )}
+            {isAllowed ? <Component {...pageProps} /> : <ErrorPage />}
           </Layout>
         </div>
       </PersistGate>

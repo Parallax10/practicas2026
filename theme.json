@@ -2,10 +2,11 @@
   "El Motorista": {
     "siteName": "El Motorista",
     "enabledModules": ["products", "motos", "catalogues"],
-    "allowedPages": ["*"], 
+    "allowedPages": ["*"],
     "theme": {
       "primaryColor": "#d32f2f",
-      "gridColumns": "repeat(4, 1fr)"
+      "gridColumns": "repeat(4, 1fr)",
+      "cardBg": "#ffffff"
     }
   },
   "LolaMoto": {
@@ -14,7 +15,8 @@
     "allowedPages": ["/", "/detallesMotos/[url]"],
     "theme": {
       "primaryColor": "#000000",
-      "gridColumns": "repeat(2, 1fr)"
+      "gridColumns": "repeat(2, 1fr)",
+      "cardBg": "#f0f0f0"
     }
   }
 }

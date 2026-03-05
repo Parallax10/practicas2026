@@ -5,8 +5,12 @@
     "motos",
     "catalogues"
   ],
+  "allowedPages": [
+    "*"
+  ],
   "theme": {
     "primaryColor": "#d32f2f",
-    "gridColumns": "repeat(4, 1fr)"
+    "gridColumns": "repeat(4, 1fr)",
+    "cardBg": "#ffffff"
   }
 }
