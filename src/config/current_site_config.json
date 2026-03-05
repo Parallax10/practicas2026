@@ -1,0 +1,12 @@
+{
+  "siteName": "El Motorista",
+  "enabledModules": [
+    "products",
+    "motos",
+    "catalogues"
+  ],
+  "theme": {
+    "primaryColor": "#d32f2f",
+    "gridColumns": "repeat(4, 1fr)"
+  }
+}

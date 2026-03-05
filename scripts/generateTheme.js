@@ -1,14 +1,9 @@
-const fs = require('fs');
-const Handlebars = require('handlebars');
-require('dotenv').config({ path: '.env.local' });
+// Dentro de scripts/generateTheme.js
 
-const site = process.env.NEXT_PUBLIC_SITE_NAME || "El Motorista";
-const themeData = JSON.parse(fs.readFileSync('./theme.json', 'utf8'))[site];
+const indexContent = `// Archivo generado automáticamente
+import siteConfig from './current_site_config.json';
+export const config = siteConfig;
+export { default as themeStyles } from '../styles/dynamicTheme.module.scss';
+`;
 
-const templateSource = fs.readFileSync('./scripts/theme.scss.hbs', 'utf8');
-const template = Handlebars.compile(templateSource);
-const result = template(themeData);
-
-fs.writeFileSync('./src/styles/dynamicTheme.scss', result);
-// También podemos generar un JSON de config para el cliente
-fs.writeFileSync('./src/config/current_site_config.json', JSON.stringify(themeData));
+fs.writeFileSync(path.join(__dirname, '../src/config/index.ts'), indexContent);

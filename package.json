@@ -2,11 +2,12 @@
   "name": "practicas2026",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-  "predev": "node scripts/generate-theme.js",
+"scripts": {
+  "predev": "node scripts/generateTheme.js",
   "dev": "next dev",
-  "prebuild": "node scripts/generate-theme.js",
-  "build": "next build"
+  "prebuild": "node scripts/generateTheme.js",
+  "build": "next build",
+  "start": "next start"
 },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",

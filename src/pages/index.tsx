@@ -2,25 +2,28 @@
 import { useEffect } from "react";
 import Head from 'next/head'; 
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from './store/hooks';
-import { remoteLog } from './utils/logger';
+// Ruta corregida: hooks.ts está en src/pages/store/hooks.ts
+import { useAppSelector } from './store/hooks'; 
+// Ruta corregida: logger.ts está en src/pages/utils/logger.ts
+import { remoteLog } from './utils/logger'; 
 
-// Componentes de la tienda
+// Componentes locales (están en la misma carpeta src/pages/)
 import Motos from "./motos";
 import Products from "./products";
 import Catalogues from './catalogues';
 
-// Importamos el archivo de configuración generado por tu script de Handlebars
-// Nota: Este archivo se creará automáticamente al ejecutar 'npm run dev'
+// IMPORTACIÓN LÍNEA 14: Asegúrate de que el archivo exista en src/config/
 import siteConfig from '../config/current_site_config.json'; 
+// dynamicTheme.module.scss debe estar en src/styles/
 import dynamicStyles from '../styles/dynamicTheme.module.scss';
 
 export default function Home() {
     const { t } = useTranslation();
     const usuario = useAppSelector((state) => state.user?.nombre);
     
-    // El nombre del sitio ahora viene del JSON generado
-    const siteName = siteConfig.siteName || "El Motorista";
+    // Verificación de seguridad para evitar errores si el JSON está vacío
+    const siteName = siteConfig?.siteName || "El Motorista";
+    const enabledModules = siteConfig?.enabledModules || [];
 
     useEffect(() => {
         const userLabel = usuario || "Invitado";
@@ -33,27 +36,10 @@ export default function Home() {
                 <title>{`Inicio | ${siteName}`}</title>
             </Head>
 
-            {/* Layout dinámico basado en módulos habilitados en el JSON */}
             <main className={dynamicStyles.layoutWrapper}>
-                
-                {siteConfig.enabledModules.includes("catalogues") && (
-                    <section className={dynamicStyles.section}>
-                        <Catalogues />
-                    </section>
-                )}
-
-                {siteConfig.enabledModules.includes("motos") && (
-                    <section className={dynamicStyles.section}>
-                        <Motos />
-                    </section>
-                )}
-
-                {siteConfig.enabledModules.includes("products") && (
-                    <section className={dynamicStyles.section}>
-                        <Products />
-                    </section>
-                )}
-                
+                {enabledModules.includes("catalogues") && <Catalogues />}
+                {enabledModules.includes("motos") && <Motos />}
+                {enabledModules.includes("products") && <Products />}
             </main>
         </div>
     );

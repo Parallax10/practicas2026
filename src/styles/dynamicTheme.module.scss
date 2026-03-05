@@ -1,23 +1,23 @@
 // Archivo autogenerado por Handlebars. NO EDITAR DIRECTAMENTE.
 
 .mainContainer {
-  background-color: #ffffff;
-  color: #333333;
+  background-color: ;
+  color: ;
   min-height: 100vh;
 }
 
 .productGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: ;
+  gap: ;
   padding: 20px;
 }
 
 .productCard {
-  display: flex;
-  flex-direction: column;
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
+  display: ;
+  flex-direction: ;
+  background-color: ;
+  border: ;
   padding: 15px;
   border-radius: 8px;
   transition: transform 0.2s;
@@ -27,14 +27,14 @@
   }
 
   .title {
-    color: #d32f2f;
+    color: ;
     font-weight: bold;
     margin-top: 10px;
   }
 }
 
 .navbar {
-  background-color: #d32f2f;
+  background-color: ;
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
