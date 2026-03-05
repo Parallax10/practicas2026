@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-$primary: #e3000f;
-$secondary: #000000;
-$bg-body: #f4f4f4;
-$border: #e0e0e0;
+$primary: #0277bd;
+$secondary: #111111;
+$bg-body: #e1f5fe;
+$border: #81d4fa;
 
 :global(body) { margin: 0; font-family: 'Roboto', sans-serif; background-color: $bg-body; color: #333; }
 

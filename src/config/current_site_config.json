@@ -1,33 +1,30 @@
 {
-  "siteName": "El Motorista",
+  "siteName": "Intermoto",
   "menuItems": [
-    {
-      "label": "Motos",
-      "path": "/"
-    },
     {
       "label": "Productos",
       "path": "/products"
     }
   ],
   "allowedPages": [
-    "*"
+    "/products",
+    "/detallesProductos/[url]"
   ],
   "styles": {
-    "navbar": "1",
-    "footer": "1",
-    "filters": "1",
+    "navbar": "2",
+    "footer": "2",
+    "filters": "2",
     "cards": "1",
     "details": "1"
   },
   "theme": {
     "colors": {
-      "primary": "#e3000f",
-      "secondary": "#000000",
-      "text": "#333333",
+      "primary": "#0277bd",
+      "secondary": "#111111",
+      "text": "#222222",
       "bg_light": "#ffffff",
-      "bg_body": "#f4f4f4",
-      "border": "#e0e0e0"
+      "bg_body": "#e1f5fe",
+      "border": "#81d4fa"
     },
     "fonts": {
       "main": "'Roboto', sans-serif"
