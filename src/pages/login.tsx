@@ -1,34 +1,33 @@
-import { useState } from "react";
-import { useAppDispatch } from "./store/hooks";
-import { loginSuccess } from "./store/slices/userSlice";
-import { useRouter } from "next/router";
-import { remoteLog } from "./utils/logger";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from './store/store';
+import { login, logout } from './store/slices/shopSlice';
+import { themeStyles } from '../config/index';
+
 export default function Login() {
-    const[nombreUsuario, setNombreUsuario] = useState("");
-    const[error, setError] = useState("");
-    let guardarNombre=null;
-    const dispatch = useAppDispatch();
-    const router = useRouter();
-    async function validarUsuario(){
-        if(nombreUsuario === ""){
-            remoteLog(`error`, "nombre de usuario vacío");
-            setError("El nombre de usuario no puede estar vacio");
-        }else{
-            setError("");
-            guardarNombre=sessionStorage.setItem("nombreUsuario", nombreUsuario);
-            dispatch(loginSuccess(nombreUsuario));
-            remoteLog(`info`, `Usuario ${nombreUsuario} ha iniciado sesión`);
-            router.push("/");
-        }
-    }
+    const dispatch = useDispatch();
+    const { isLoggedIn, currentUser } = useSelector((state: RootState) => state.shop);
+    const [user, setUser] = useState('');
+
     return (
-        <div>
-            <h1>Login</h1>
-            <div>
-                <p>Nombre de Usuario</p>
-                <input type="text" value={nombreUsuario} onChange={(e) => setNombreUsuario(e.target.value)} />
-                <p>{error}</p>
-                <button onClick={()=>validarUsuario()}>Iniciar Sesion</button>
+        <div className={themeStyles.authPage}>
+            <Head><title>Mi Cuenta</title></Head>
+            <div className={themeStyles.authBox}>
+                {isLoggedIn ? (
+                    <>
+                        <h2>Bienvenido, {currentUser}</h2>
+                        <p>Ya tienes acceso a tu carrito y favoritos.</p>
+                        <button className={themeStyles.contactBtn} onClick={() => dispatch(logout())}>Cerrar Sesión</button>
+                    </>
+                ) : (
+                    <>
+                        <h2>Iniciar Sesión</h2>
+                        <input type="text" placeholder="Nombre de usuario" value={user} onChange={e => setUser(e.target.value)} />
+                        <input type="password" placeholder="Contraseña" />
+                        <button className={themeStyles.contactBtn} onClick={() => { if(user) dispatch(login(user)); }}>Acceder</button>
+                    </>
+                )}
             </div>
         </div>
     );

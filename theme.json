@@ -1,33 +1,32 @@
 {
   "El Motorista": {
     "siteName": "El Motorista",
-    "enabledModules": ["products_featured", "sidebar_filters"],
+    "menuItems": [ { "label": "Motos", "path": "/" }, { "label": "Productos", "path": "/products" } ],
     "allowedPages": ["*"],
-    "menuItems": [
-      "Motos Nuevas", 
-      "Motos Ocasión", 
-      "Equipación", 
-      "Accesorios", 
-      "Recambios"
-    ],
+    "styles": { "navbar": "1", "footer": "1", "filters": "1", "cards": "1", "details": "1" },
     "theme": {
-      "colors": {
-        "primary": "#e3000f",
-        "secondary": "#000000",
-        "text": "#333333",
-        "bg_light": "#ffffff",
-        "bg_body": "#f4f4f4",
-        "border": "#e0e0e0"
-      },
-      "fonts": {
-        "main": "'Roboto', sans-serif"
-      },
-      "layout": {
-        "maxWidth": "1400px",
-        "sidebarWidth": "250px",
-        "productsGrid": "repeat(auto-fill, minmax(280px, 1fr))",
-        "gap": "30px"
-      }
+      "colors": { "primary": "#e3000f", "secondary": "#000000", "text": "#333333", "bg_light": "#ffffff", "bg_body": "#f4f4f4", "border": "#e0e0e0" },
+      "fonts": { "main": "'Roboto', sans-serif" }
+    }
+  },
+  "Lola Moto": {
+    "siteName": "Lola Moto",
+    "menuItems": [ { "label": "Motos", "path": "/" } ],
+    "allowedPages": ["/", "/detallesMotos/[url]"],
+    "styles": { "navbar": "2", "footer": "2", "filters": "2", "cards": "2", "details": "2" },
+    "theme": {
+      "colors": { "primary": "#e83e8c", "secondary": "#333333", "text": "#444444", "bg_light": "#ffffff", "bg_body": "#fce4ec", "border": "#f48fb1" },
+      "fonts": { "main": "'Roboto', sans-serif" }
+    }
+  },
+  "Intermoto": {
+    "siteName": "Intermoto",
+    "menuItems": [ { "label": "Productos", "path": "/products" } ],
+    "allowedPages": ["/products", "/detallesProductos/[url]"],
+    "styles": { "navbar": "2", "footer": "2", "filters": "2", "cards": "1", "details": "1" },
+    "theme": {
+      "colors": { "primary": "#0277bd", "secondary": "#111111", "text": "#222222", "bg_light": "#ffffff", "bg_body": "#e1f5fe", "border": "#81d4fa" },
+      "fonts": { "main": "'Roboto', sans-serif" }
     }
   }
 }

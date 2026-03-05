@@ -1,35 +1,18 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import userReducer from './slices/userSlice';
-import motoReducer from './slices/motoSlice';
-import productsReducer from './slices/prodSlice';
+import { configureStore } from '@reduxjs/toolkit';
+import shopReducer from './slices/shopSlice';
 
-const rootReducer = combineReducers({
-    user: userReducer,
-    motos: motoReducer,
-    products: productsReducer,
+export const store = configureStore({
+  reducer: { shop: shopReducer }
 });
 
-const persistConfig = {
-    key: 'root',
-    storage,
-    whitelist: ['user'], 
-};
+// NUEVO: Suscribirse a los cambios. Cada vez que el estado cambia, lo guardamos en el navegador.
+store.subscribe(() => {
+    if (typeof window !== 'undefined') {
+        const state = store.getState().shop;
+        localStorage.setItem('miTiendaState', JSON.stringify(state));
+    }
+});
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
-export const makeStore = () => {
-    return configureStore({
-        reducer: persistedReducer,
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({
-        serializableCheck: false, 
-        }),
-    });
-};
-
-
-export type AppStore = ReturnType<typeof makeStore>;
-export type RootState = ReturnType<typeof rootReducer>;
-export type AppDispatch = AppStore['dispatch'];

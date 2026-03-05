@@ -1,19 +1,25 @@
 {
   "siteName": "El Motorista",
-  "enabledModules": [
-    "products_featured",
-    "sidebar_filters"
+  "menuItems": [
+    {
+      "label": "Motos",
+      "path": "/"
+    },
+    {
+      "label": "Productos",
+      "path": "/products"
+    }
   ],
   "allowedPages": [
     "*"
   ],
-  "menuItems": [
-    "Motos Nuevas",
-    "Motos Ocasión",
-    "Equipación",
-    "Accesorios",
-    "Recambios"
-  ],
+  "styles": {
+    "navbar": "1",
+    "footer": "1",
+    "filters": "1",
+    "cards": "1",
+    "details": "1"
+  },
   "theme": {
     "colors": {
       "primary": "#e3000f",
@@ -25,12 +31,6 @@
     },
     "fonts": {
       "main": "'Roboto', sans-serif"
-    },
-    "layout": {
-      "maxWidth": "1400px",
-      "sidebarWidth": "250px",
-      "productsGrid": "repeat(auto-fill, minmax(280px, 1fr))",
-      "gap": "30px"
     }
   }
 }
