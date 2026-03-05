@@ -1,0 +1,22 @@
+{
+  "El Motorista": {
+    "siteName": "El Motorista",
+    "theme": {
+      "primaryColor": "#d32f2f",
+      "navDirection": "row",
+      "productsGrid": "repeat(4, 1fr)",
+      "cardBackground": "#ffffff"
+    },
+    "enabledModules": ["motos", "products", "catalogues"]
+  },
+  "LolaMoto": {
+    "siteName": "Lola Moto",
+    "theme": {
+      "primaryColor": "#000000",
+      "navDirection": "column",
+      "productsGrid": "repeat(2, 1fr)",
+      "cardBackground": "#f0f0f0"
+    },
+    "enabledModules": ["motos"]
+  }
+}

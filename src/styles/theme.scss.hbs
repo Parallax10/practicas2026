@@ -1,0 +1,42 @@
+// Archivo autogenerado por Handlebars. NO EDITAR DIRECTAMENTE.
+
+.mainContainer {
+  background-color: {{colors.background}};
+  color: {{colors.text}};
+  min-height: 100vh;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: {{grid.columns}};
+  gap: {{grid.gap}};
+  padding: 20px;
+}
+
+.productCard {
+  display: {{card.display}};
+  flex-direction: {{card.flexDirection}};
+  background-color: {{card.background}};
+  border: {{card.border}};
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .title {
+    color: {{colors.primary}};
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+
+.navbar {
+  background-color: {{colors.primary}};
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: white;
+}
