@@ -1,23 +1,30 @@
 import React from 'react';
-import Image from 'next/image';
-import dynamicStyles from '../styles/dynamicTheme.module.scss';
+import { themeStyles } from '../config/index';
 
-interface Product {
+export interface ProductProps {
   id: string;
+  brand: string;
   name: string;
   price: number;
-  brand: string;
-  image: string;
+  oldPrice?: number;
+  imageUrl: string; 
 }
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product }: { product: ProductProps }) {
   return (
-    <div className={dynamicStyles.productCard}>
-      <img src={product.image} alt={product.name} width={200} height={200} style={{ objectFit: 'contain' }}/>
-      <p className={dynamicStyles.brand}>{product.brand}</p>
-      <h3 className={dynamicStyles.title}>{product.name}</h3>
-      <p className={dynamicStyles.price}>{product.price.toFixed(2)} €</p>
-      <button>Añadir al carrito</button>
+    <div className={themeStyles.productCard}>
+      <div className={themeStyles.imageWrapper}>
+        <img src={product.imageUrl} alt={product.name} />
+      </div>
+      <div className={themeStyles.brand}>{product.brand}</div>
+      <h3 className={themeStyles.name}>{product.name}</h3>
+      <div className={themeStyles.priceRow}>
+        <span className={themeStyles.currentPrice}>{product.price.toLocaleString('es-ES')} €</span>
+        {product.oldPrice && (
+          <span className={themeStyles.oldPrice}>{product.oldPrice.toLocaleString('es-ES')} €</span>
+        )}
+      </div>
+      <button className={themeStyles.addToCartBtn}>Ver detalles</button>
     </div>
   );
 }

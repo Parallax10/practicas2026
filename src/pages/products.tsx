@@ -1,35 +1,29 @@
-"use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { themeStyles as styles } from '../config/index';
-import { useAppSelector, useAppDispatch } from "./store/hooks";
-import { fetchProductos } from "./store/slices/prodSlice";
+// src/components/ProductCard.tsx (Recomendado crear este componente)
+import React from 'react';
+import { themeStyles } from '../config/index';
 
-export default function products(){
-    const dispatch=useAppDispatch();
-    useEffect(()=>{
-        dispatch(fetchProductos())
-    },[])
-    const {items}=useAppSelector(state=>state.products)
-    return(
-        <div className={styles.maps}>
-            {items.map(producto=>
-                <div key={producto.id} className={styles.item}>
-                    <ul className={styles.lista}>
-                        <li className={styles.imagen}>
-                            <Link href={`/detallesProductos/${producto.url}`}>
-                                <img src={producto.thumbnail} alt={producto.title}></img>
-                            </Link>
-                        </li>
-                        <li className={styles.nombre}>
-                            <p>{producto.title}</p>
-                        </li>
-                        <li className={styles.precio}>
-                            {producto.price}€
-                        </li>
-                    </ul>
-                </div>
-            )}
-        </div>
-    )
+interface Product {
+  id: string;
+  brand: string;
+  name: string;
+  price: number;
+  oldPrice?: number;
+  imageUrl: string;
+}
+
+export default function ProductCard({ product }: { product: Product }) {
+  return (
+    <div className={themeStyles.productCard}>
+      <div className={themeStyles.imageWrapper}>
+        <img src={product.imageUrl} alt={product.name} />
+      </div>
+      <div className={themeStyles.brand}>{product.brand}</div>
+      <h3 className={themeStyles.name}>{product.name}</h3>
+      <div className={themeStyles.priceRow}>
+        <span className={themeStyles.currentPrice}>{product.price.toFixed(2)} €</span>
+        {product.oldPrice && <span className={themeStyles.oldPrice}>{product.oldPrice.toFixed(2)} €</span>}
+      </div>
+      <button className={themeStyles.addToCartBtn}>Añadir</button>
+    </div>
+  );
 }

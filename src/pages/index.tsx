@@ -1,31 +1,58 @@
-import { useEffect } from "react";
+"use client"
+import { useEffect, useState } from "react";
 import Head from 'next/head'; 
-import { useAppSelector } from './store/hooks';
-import { remoteLog } from './utils/logger';
-import Motos from "./motos";
-import Products from "./products";
-import Catalogues from './catalogues';
 import { config, themeStyles } from '../config/index';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
-    const usuario = useAppSelector((state) => state.user?.nombre);
+    const [motos, setMotos] = useState<any[]>([]);
     const siteConfig = config as any;
 
     useEffect(() => {
-        remoteLog('info', `Acceso al sitio: ${siteConfig.siteName} por ${usuario || "Invitado"}`);
-    }, [usuario, siteConfig.siteName]);
+        fetch('/api/motos').then(res => res.json()).then(setMotos);
+    }, []);
 
     return (
-        <div className={themeStyles.contenedorPrincipal}>
-            <Head>
-                <title>{`Inicio | ${siteConfig.siteName}`}</title>
-            </Head>
+        <div className={themeStyles.mainContainer}>
+            <Head><title>Motos Ocasión | El Motorista</title></Head>
+            <Navbar />
+            
+            <div className={themeStyles.pageLayout}>
+                {/* SIDEBAR CON TODOS LOS FILTROS */}
+                <aside className={themeStyles.sidebar}>
+                    <div className={themeStyles.filterBlock}>
+                        <h4>ESTADO</h4>
+                        <label><input type="checkbox"/> Seminuevas</label>
+                        <label><input type="checkbox"/> Kilómetro 0</label>
+                    </div>
+                    <div className={themeStyles.filterBlock}>
+                        <h4>MOTORIZACIÓN</h4>
+                        <label><input type="checkbox"/> Gasolina</label>
+                        <label><input type="checkbox"/> Eléctrico</label>
+                    </div>
+                    <div className={themeStyles.filterBlock}>
+                        <h4>CARNET / LICENCIA</h4>
+                        <label><input type="checkbox"/> AM (Ciclomotor)</label>
+                        <label><input type="checkbox"/> A1 / B (125cc)</label>
+                        <label><input type="checkbox"/> A2</label>
+                    </div>
+                </aside>
 
-            <main className={themeStyles.layoutWrapper}>
-                {siteConfig.enabledModules.includes("catalogues") && <Catalogues />}
-                {siteConfig.enabledModules.includes("motos") && <Motos />}
-                {siteConfig.enabledModules.includes("products") && <Products />}
-            </main>
+                {/* GRID DE PRODUCTOS (DATOS DE API MOTOS.TS) */}
+                <section className={themeStyles.productGrid}>
+                    {motos.map((moto) => (
+                        <div key={moto.id} className={themeStyles.card}>
+                            <div className={themeStyles.imgBox}>
+                                <img src={moto.thumbnail} alt={moto.title} />
+                            </div>
+                            <div style={{fontSize: '11px', color: '#999'}}>{moto.type}</div>
+                            <h3 style={{fontSize: '14px', margin: '10px 0', height: '40px'}}>{moto.title}</h3>
+                            <div className={themeStyles.price}>{moto.price.toLocaleString()} €</div>
+                            <button className={themeStyles.btn}>Ver Vehículo</button>
+                        </div>
+                    ))}
+                </section>
+            </div>
         </div>
     );
 }

@@ -1,16 +1,30 @@
 {
   "siteName": "El Motorista",
   "enabledModules": [
-    "products",
-    "motos",
-    "catalogues"
+    "products_featured",
+    "sidebar_filters",
+    "top_info_bar"
   ],
   "allowedPages": [
     "*"
   ],
   "theme": {
-    "primaryColor": "#d32f2f",
-    "gridColumns": "repeat(4, 1fr)",
-    "cardBg": "#ffffff"
+    "colors": {
+      "primary": "#d32f2f",
+      "secondary": "#212121",
+      "text": "#333333",
+      "bg_light": "#ffffff",
+      "bg_body": "#f4f4f4",
+      "border": "#e0e0e0"
+    },
+    "fonts": {
+      "main": "'Roboto', sans-serif"
+    },
+    "layout": {
+      "maxWidth": "1400px",
+      "sidebarWidth": "280px",
+      "productsGrid": "repeat(auto-fill, minmax(280px, 1fr))",
+      "gap": "30px"
+    }
   }
 }
