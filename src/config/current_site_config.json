@@ -2,16 +2,22 @@
   "siteName": "El Motorista",
   "enabledModules": [
     "products_featured",
-    "sidebar_filters",
-    "top_info_bar"
+    "sidebar_filters"
   ],
   "allowedPages": [
     "*"
   ],
+  "menuItems": [
+    "Motos Nuevas",
+    "Motos Ocasión",
+    "Equipación",
+    "Accesorios",
+    "Recambios"
+  ],
   "theme": {
     "colors": {
-      "primary": "#d32f2f",
-      "secondary": "#212121",
+      "primary": "#e3000f",
+      "secondary": "#000000",
       "text": "#333333",
       "bg_light": "#ffffff",
       "bg_body": "#f4f4f4",
@@ -22,7 +28,7 @@
     },
     "layout": {
       "maxWidth": "1400px",
-      "sidebarWidth": "280px",
+      "sidebarWidth": "250px",
       "productsGrid": "repeat(auto-fill, minmax(280px, 1fr))",
       "gap": "30px"
     }

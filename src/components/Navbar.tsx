@@ -1,22 +1,49 @@
 import React from 'react';
-import { themeStyles } from '../config/index';
+import Link from 'next/link';
+import { themeStyles, config } from '../config/index';
 
 export default function Navbar() {
+  const siteConfig = config as any;
+  // Extraemos los items del JSON. Si no hay, dejamos un array vacío
+  const menuItems = siteConfig?.menuItems || []; 
+
   return (
-    <nav className={themeStyles.navbar}>
+    <header className={themeStyles.navbar}>
       <div className={themeStyles.topBar}>
-        <div className={themeStyles.container}>Envío gratis a partir de 50€ | Tel: 900 000 000</div>
-      </div>
-      <div className={`${themeStyles.mainHeader} ${themeStyles.container}`}>
-        <div className={themeStyles.logo}>EL MOTORISTA</div>
-        <div className={themeStyles.searchContainer}>
-          <input type="text" placeholder="¿Qué estás buscando?" />
-          <button>BUSCAR</button>
+        <div className={themeStyles.topBarContainer}>
+          <span>Llámanos: 956 34 22 11</span>
+          <span>ENVÍO GRATIS A PARTIR DE 50€ (Solo Península)</span>
+          <span>Nuestras Tiendas</span>
         </div>
       </div>
-      <div className={themeStyles.menuBar}>
-        <span>MOTOS</span><span>EQUIPACIÓN</span><span>RECAMBIOS</span><span>OUTLET</span>
+      <div className={themeStyles.mainHeader}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <div className={themeStyles.logo}>EL MOTORISTA</div>
+        </Link>
+        <div className={themeStyles.search}>
+          <input type="text" placeholder="Buscar por marca, modelo, artículo..." />
+          <button>BUSCAR</button>
+        </div>
+        <div className={themeStyles.icons}>
+          <div className={themeStyles.iconBox}>
+            <span className={themeStyles.iconEmoji}>👤</span>
+            <span>Mi Cuenta</span>
+          </div>
+          <div className={themeStyles.iconBox}>
+            <span className={themeStyles.iconEmoji}>🛒</span>
+            <span>Mi Cesta</span>
+          </div>
+        </div>
       </div>
-    </nav>
+      
+      {/* MENÚ DINÁMICO */}
+      <div className={themeStyles.navMenu}>
+        <div className={themeStyles.navMenuContainer}>
+          {menuItems.map((item: string, index: number) => (
+            <span key={index}>{item}</span>
+          ))}
+        </div>
+      </div>
+    </header>
   );
 }
