@@ -45,7 +45,7 @@ export default function Home() {
     return (
         <div>
             <Head><title>Motos | {siteConfig?.siteName}</title></Head>
-            <div className={themeStyles.pageLayout}>
+            <div className={themeStyles.pageLayout} >
                 
                 {/* FILTROS TOPBAR */}
                 {filterLayout === 'topbar' && (
