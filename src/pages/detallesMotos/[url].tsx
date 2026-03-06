@@ -27,14 +27,14 @@ export default function DetallesMoto() {
 
     if (styleId === '2') {
         return (
-            <div className={themeStyles.detailsPage_2}>
+            <div className={themeStyles.detailsPage}>
                 <Head><title>{moto.title} | {siteConfig?.siteName}</title></Head>
-                <div className={themeStyles.breadcrumb_2}><Link href="/">Volver al catálogo</Link></div>
-                <div className={themeStyles.detailsGrid_2}>
-                    <div className={themeStyles.gallery_2}>
+                <div className={themeStyles.breadcrumb}><Link href="/">Volver al catálogo</Link></div>
+                <div className={themeStyles.detailsGrid}>
+                    <div className={themeStyles.gallery}>
                         {imageList.map((img: string, idx: number) => <img key={idx} src={img} alt={`Vista ${idx}`} />)}
                     </div>
-                    <div className={themeStyles.infoBox_2}>
+                    <div className={themeStyles.infoBox}>
                         <span className={themeStyles.stateLabel} style={{background:'#000', color:'#fff', padding:'5px', borderRadius:'4px'}}>{moto.type}</span>
                         <h1 className={themeStyles.titleDetail}>{moto.title}</h1>
                         <div className={themeStyles.priceDetail}>{moto.price.toLocaleString('es-ES')} €</div>
@@ -52,13 +52,13 @@ export default function DetallesMoto() {
     }
 
     return (
-        <div className={themeStyles.detailsPage_1}>
+        <div className={themeStyles.detailsPage}>
             <Head><title>{moto.title} | {siteConfig?.siteName}</title></Head>
-            <div className={themeStyles.breadcrumb_1}>
+            <div className={themeStyles.breadcrumb}>
                 <Link href="/">Inicio</Link> <span>/</span> <Link href="/">Motos {moto.type}</Link> <span>/</span> {moto.brand}
             </div>
-            <div className={themeStyles.detailsGrid_1}>
-                <div className={themeStyles.gallery_1}>
+            <div className={themeStyles.detailsGrid}>
+                <div className={themeStyles.gallery}>
                     <div className={themeStyles.mainImg}><img src={mainImg} alt={moto.title} /></div>
                     <div className={themeStyles.thumbs}>
                         {imageList.map((img: string, idx: number) => (
@@ -66,7 +66,7 @@ export default function DetallesMoto() {
                         ))}
                     </div>
                 </div>
-                <div className={themeStyles.infoBox_1}>
+                <div className={themeStyles.infoBox}>
                     <span className={themeStyles.stateLabel}>{moto.type}</span>
                     <h1 className={themeStyles.titleDetail}>{moto.title}</h1>
                     <div className={themeStyles.priceDetail}>{moto.price.toLocaleString('es-ES')} €</div>

@@ -14,7 +14,7 @@ export default function ProductCard({ product }: { product: any }) {
   const isFav = (favorites[siteConfig.siteName] || []).some((i: any) => i.id === product.id);
 
   const handleFav = (e: React.MouseEvent) => {
-      e.preventDefault(); // Evita que al dar al corazón se abra la página
+      e.preventDefault();
       if (!isLoggedIn) return alert("Inicia sesión para añadir a favoritos");
       dispatch(toggleFavorite({ site: siteConfig.siteName, product }));
   };
@@ -25,7 +25,6 @@ export default function ProductCard({ product }: { product: any }) {
       </div>
   );
 
-  // Diferenciamos si es moto o producto para la ruta y los textos
   const isMoto = product.kms !== undefined;
   const linkUrl = `/${isMoto ? 'detallesMotos' : 'detallesProductos'}/${product.url}`;
   const badgeText = isMoto ? product.type : product.category;
@@ -33,7 +32,7 @@ export default function ProductCard({ product }: { product: any }) {
 
   if (styleId === '2') {
       return (
-        <Link href={linkUrl} className={themeStyles.card_2} style={{position:'relative'}}>
+        <Link href={linkUrl} className={themeStyles.card} style={{position:'relative'}}>
             <HeartButton />
             <div className={themeStyles.imgBox}><img src={imageUrl} alt={product.name} /></div>
             <div className={themeStyles.infoBox}>
@@ -54,7 +53,7 @@ export default function ProductCard({ product }: { product: any }) {
   }
 
   return (
-    <Link href={linkUrl} className={themeStyles.card_1} style={{position:'relative'}}>
+    <Link href={linkUrl} className={themeStyles.card} style={{position:'relative'}}>
       <HeartButton />
       <div className={themeStyles.badgeState}>{badgeText}</div>
       <div className={themeStyles.imgBox}><img src={imageUrl} alt={product.name} /></div>

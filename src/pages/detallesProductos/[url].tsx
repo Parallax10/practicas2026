@@ -18,7 +18,6 @@ export default function DetallesProducto() {
     const [mainImg, setMainImg] = useState<string>('');
     const [selectedSize, setSelectedSize] = useState<string>('');
 
-    // REDUX LOGIC
     const dispatch = useDispatch();
     const { isLoggedIn, favorites } = useSelector((state: RootState) => state.shop);
     const isFav = (favorites[siteConfig.siteName] || []).some((i: any) => i.id === prod?.id);
@@ -26,8 +25,6 @@ export default function DetallesProducto() {
     const handleAddToCart = () => {
         if (!isLoggedIn) return alert("Por favor, inicia sesión para añadir al carrito.");
         if (!selectedSize) return alert("Debes seleccionar una talla antes de añadir a la cesta.");
-        
-        // Despachamos al carrito pero YA NO mostramos el alert() de éxito
         dispatch(addToCart({ site: siteConfig.siteName, product: { ...prod, selectedSize } }));
     };
 
@@ -62,14 +59,14 @@ export default function DetallesProducto() {
 
     if (styleId === '2') {
         return (
-            <div className={themeStyles.detailsPage_2}>
+            <div className={themeStyles.detailsPage}>
                 <Head><title>{prod.name} | {siteConfig?.siteName}</title></Head>
-                <div className={themeStyles.breadcrumb_2}><Link href="/products">Volver a la tienda</Link></div>
-                <div className={themeStyles.detailsGrid_2}>
-                    <div className={themeStyles.gallery_2}>
+                <div className={themeStyles.breadcrumb}><Link href="/products">Volver a la tienda</Link></div>
+                <div className={themeStyles.detailsGrid}>
+                    <div className={themeStyles.gallery}>
                         {imageList.map((img: string, idx: number) => <img key={idx} src={img} alt={`Vista ${idx}`} />)}
                     </div>
-                    <div className={themeStyles.infoBox_2}>
+                    <div className={themeStyles.infoBox}>
                         <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                             <span style={{fontSize: '12px', color: '#888', textTransform: 'uppercase'}}>{prod.brand}</span>
                             <span style={{cursor:'pointer', fontSize:'24px'}} onClick={handleFav}>{isFav ? '❤️' : '🤍'}</span>
@@ -77,8 +74,6 @@ export default function DetallesProducto() {
                         <h1 className={themeStyles.titleDetail}>{prod.name}</h1>
                         <div className={themeStyles.priceDetail}>{prod.price.toLocaleString('es-ES')} €</div>
                         <TallasBlock />
-                        
-                        {/* Botón con el evento correcto y sin alertas de éxito */}
                         <button className={themeStyles.contactBtn} onClick={handleAddToCart}>
                             Añadir a la Cesta
                         </button>
@@ -88,15 +83,14 @@ export default function DetallesProducto() {
         );
     }
 
-    // ESTILO 1: RÉPLICA EL MOTORISTA
     return (
-        <div className={themeStyles.detailsPage_1}>
+        <div className={themeStyles.detailsPage}>
             <Head><title>{prod.name} | {siteConfig?.siteName}</title></Head>
-            <div className={themeStyles.breadcrumb_1}>
+            <div className={themeStyles.breadcrumb}>
                 <Link href="/">Inicio</Link> <span>/</span> <Link href="/products">{prod.category}</Link> <span>/</span> {prod.brand}
             </div>
-            <div className={themeStyles.detailsGrid_1}>
-                <div className={themeStyles.gallery_1}>
+            <div className={themeStyles.detailsGrid}>
+                <div className={themeStyles.gallery}>
                     <div className={themeStyles.mainImg}><img src={mainImg} alt={prod.name} /></div>
                     {imageList.length > 1 && (
                         <div className={themeStyles.thumbs}>
@@ -106,22 +100,18 @@ export default function DetallesProducto() {
                         </div>
                     )}
                 </div>
-                <div className={themeStyles.infoBox_1}>
+                <div className={themeStyles.infoBox}>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
                         <span className={themeStyles.stateLabel} style={{background: '#888', margin: 0}}>{prod.category}</span>
                         <span style={{cursor:'pointer', fontSize:'24px'}} onClick={handleFav}>{isFav ? '❤️' : '🤍'}</span>
                     </div>
-                    
                     <h1 className={themeStyles.titleDetail} style={{fontSize: '26px'}}>{prod.name}</h1>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '5px' }}>
                         <div className={themeStyles.priceDetail}>{prod.price.toLocaleString('es-ES')} €</div>
                         {prod.oldPrice && <div style={{ textDecoration: 'line-through', color: '#999', fontSize: '20px' }}>{prod.oldPrice.toLocaleString('es-ES')} €</div>}
                     </div>
                     <span className={themeStyles.taxInfo}>IVA incluido. Envío gratis a partir de 50€.</span>
-                    
                     <TallasBlock />
-                    
-                    {/* Botón con el evento correcto y sin alertas de éxito */}
                     <button className={themeStyles.contactBtn} onClick={handleAddToCart}>
                         Añadir a la Cesta
                     </button>

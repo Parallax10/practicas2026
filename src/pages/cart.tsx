@@ -16,7 +16,7 @@ export default function Cart() {
     const total = items.reduce((acc, item) => acc + item.price, 0);
 
     return (
-        <div className={themeStyles.detailsPage_1}>
+        <div className={themeStyles.detailsPage}>
             <Head><title>Mi Cesta | {siteConfig?.siteName}</title></Head>
             <h1 className={themeStyles.titleDetail}>Mi Cesta de Compra</h1>
             {items.length === 0 ? <p>Tu cesta está vacía. Añade productos de la tienda.</p> : (

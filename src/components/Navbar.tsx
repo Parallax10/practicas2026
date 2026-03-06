@@ -9,7 +9,6 @@ export default function Navbar() {
   const menuItems = siteConfig?.menuItems || [];
   const styleId = siteConfig?.styles?.navbar || '1';
 
-  // Extraemos estado global
   const { isLoggedIn, cart, favorites } = useSelector((state: RootState) => state.shop);
   const cartItemsCount = cart[siteConfig.siteName]?.length || 0;
   const favItemsCount = favorites[siteConfig.siteName]?.length || 0;
@@ -45,7 +44,7 @@ export default function Navbar() {
 
   if (styleId === '2') {
       return (
-          <header className={themeStyles.navbar_2}>
+          <header className={themeStyles.navbar}>
               <Link href="/" style={{ textDecoration: 'none' }}><div className={themeStyles.logo}>{siteConfig?.siteName}</div></Link>
               <div className={themeStyles.search}>
                   <input type="text" placeholder="Buscar..." />
@@ -60,7 +59,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className={themeStyles.navbar_1}>
+    <header className={themeStyles.navbar}>
       <div className={themeStyles.topBar}>
         <div className={themeStyles.topBarContainer}>
           <span>Llámanos: 956 34 22 11</span> <span>ENVÍO GRATIS A PARTIR DE 50€</span>

@@ -7,7 +7,6 @@ import ProductCard from '../components/ProductCard';
 export default function Home() {
     const siteConfig = config as any;
     const filterStyleId = siteConfig?.styles?.filters || '1';
-    const cardStyleId = siteConfig?.styles?.cards || '1';
 
     const [motos, setMotos] = useState<any[]>([]);
     const [marcas, setMarcas] = useState<string[]>([]);
@@ -45,10 +44,10 @@ export default function Home() {
     return (
         <div>
             <Head><title>Motos | {siteConfig?.siteName}</title></Head>
-            <div className={filterStyleId === '2' ? themeStyles.pageLayout_2 : themeStyles.pageLayout_1}>
+            <div className={themeStyles.pageLayout}>
                 
                 {filterStyleId === '2' && (
-                    <div className={themeStyles.topFilters_2}>
+                    <div className={themeStyles.topFilters}>
                         <div className={themeStyles.filterBlock}>
                             <h4>Estado</h4>
                             <select onChange={(e) => setEstados(e.target.value ? [e.target.value] : [])}>
@@ -82,7 +81,7 @@ export default function Home() {
                 )}
 
                 {filterStyleId === '1' && (
-                    <aside className={themeStyles.sidebar_1}>
+                    <aside className={themeStyles.sidebar}>
                         <div className={themeStyles.filterHeader}>Filtros de Motos</div>
                         <div className={themeStyles.filterBlock}>
                             <h4>ESTADO</h4>
@@ -117,7 +116,7 @@ export default function Home() {
 
                 <section style={{flex: 1}}>
                     <div style={{marginBottom: '20px', fontSize: '14px', color: '#666'}}>Mostrando {motosFiltradas.length} motos</div>
-                    <div className={cardStyleId === '2' ? themeStyles.productGrid_2 : themeStyles.productGrid_1}>
+                    <div className={themeStyles.productGrid}>
                         {motosFiltradas.map((moto) => (
                             <ProductCard key={moto.id} product={{id: moto.id, brand: moto.brand, name: moto.title, price: moto.price, imageUrl: moto.thumbnail, type: moto.type, kms: moto.kms, year: moto.year, url: moto.url}} />
                         ))}

@@ -7,7 +7,6 @@ import ProductCard from '../components/ProductCard';
 export default function Products() {
     const siteConfig = config as any;
     const filterStyleId = siteConfig?.styles?.filters || '1';
-    const cardStyleId = siteConfig?.styles?.cards || '1';
 
     const [products, setProducts] = useState<any[]>([]);
     const [categorias, setCategorias] = useState<string[]>([]);
@@ -38,10 +37,10 @@ export default function Products() {
     return (
         <div>
             <Head><title>Tienda | {siteConfig?.siteName}</title></Head>
-            <div className={filterStyleId === '2' ? themeStyles.pageLayout_2 : themeStyles.pageLayout_1}>
+            <div className={themeStyles.pageLayout}>
                 
                 {filterStyleId === '2' && (
-                    <div className={themeStyles.topFilters_2}>
+                    <div className={themeStyles.topFilters}>
                         <div className={themeStyles.filterBlock}>
                             <h4>Categoría</h4>
                             <select onChange={(e) => setCategorias(e.target.value ? [e.target.value] : [])}>
@@ -64,7 +63,7 @@ export default function Products() {
                 )}
 
                 {filterStyleId === '1' && (
-                    <aside className={themeStyles.sidebar_1}>
+                    <aside className={themeStyles.sidebar}>
                         <div className={themeStyles.filterHeader}>Filtros de Tienda</div>
                         <div className={themeStyles.filterBlock}>
                             <h4>CATEGORÍA</h4>
@@ -98,7 +97,7 @@ export default function Products() {
                 <section style={{flex: 1}}>
                     <div style={{marginBottom: '20px', fontSize: '14px', color: '#666'}}>Mostrando {filtrados.length} artículos</div>
                     
-                    <div className={cardStyleId === '2' ? themeStyles.productGrid_2 : themeStyles.productGrid_1}>
+                    <div className={themeStyles.productGrid}>
                         {filtrados.map((prod) => (
                             <ProductCard key={prod.id} product={{...prod, imageUrl: prod.thumbnail, name: prod.name}} />
                         ))}

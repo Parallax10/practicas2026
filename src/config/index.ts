@@ -1,4 +1,8 @@
-// Archivo generado automáticamente
-import siteConfig from './current_site_config.json';
-export const config = siteConfig;
-export { default as themeStyles } from '../styles/dynamicTheme.module.scss';
+import themeStyles from '../styles/dynamicTheme.module.scss';
+import fullConfig from '../../theme.json'; 
+
+const rawSiteName = process.env.NEXT_PUBLIC_SITE_NAME || 'El Motorista';
+const siteName = rawSiteName.replace(/^["']|["']$/g, '');
+
+export const config = (fullConfig as any)[siteName];
+export { themeStyles };

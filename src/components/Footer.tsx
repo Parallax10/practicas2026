@@ -7,7 +7,7 @@ export default function Footer() {
 
   if (styleId === '2') {
       return (
-          <footer className={themeStyles.footer_2}>
+          <footer className={themeStyles.footer}>
               <h2>{siteConfig?.siteName}</h2>
               <div className={themeStyles.links}>
                   <span>Contacto</span><span>Envíos</span><span>Devoluciones</span><span>Aviso Legal</span>
@@ -18,7 +18,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className={themeStyles.footer_1}>
+    <footer className={themeStyles.footer}>
       <div className={themeStyles.container}>
         <div><h4>Sobre Nosotros</h4><ul><li>Nuestras tiendas</li><li>Contacto</li></ul></div>
         <div><h4>Guía de compra</h4><ul><li>Envíos y entregas</li><li>Devoluciones</li></ul></div>
