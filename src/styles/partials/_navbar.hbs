@@ -533,3 +533,119 @@
     } 
 }
 {{/if}}
+{{#if (eq styles.navbar "6")}}
+.navbar { 
+    background-color: #ffffff; 
+    border-bottom: 1px solid #e0e0e0; 
+    color: #484848; 
+    
+    .topBar { display: none; } 
+    
+    .mainHeader { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 20px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    } 
+    .logo { 
+        font-size: 24px; 
+        font-weight: 900; 
+        color: #ffffff;
+        text-transform: uppercase; 
+        background: $primary; 
+        padding: 15px 25px; 
+        border: none; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        cursor: pointer; 
+    } 
+    .search { 
+        flex: 1; 
+        max-width: 600px; 
+        display: flex; 
+        margin: 0 40px; 
+        
+        input { 
+            width: 100%; 
+            padding: 10px 15px; 
+            border: 2px solid #e0e0e0; 
+            outline: none; 
+            font-size: 14px; 
+            font-weight: 400; 
+            border-radius: 4px 0 0 4px;
+        } 
+        button { 
+            background-color: #f5f5f5; 
+            color: #484848; 
+            border: 2px solid #e0e0e0; 
+            border-left: none; 
+            padding: 0 20px; 
+            cursor: pointer; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            border-radius: 0 4px 4px 0;
+            
+            &:hover { 
+                background-color: $primary; 
+                color: #ffffff; 
+            } 
+        } 
+    } 
+    .icons { 
+        display: flex; 
+        gap: 20px; 
+        font-size: 14px; 
+        font-weight: 700; 
+        text-transform: capitalize; 
+        
+        .iconBox { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer; 
+            padding: 10px; 
+            border: none; 
+            transition: all 0.2s ease; 
+            
+            &:hover { 
+                border: none; 
+                background: transparent; 
+                box-shadow: none; 
+                transform: scale(1.05);
+                color: $primary; 
+            } 
+            .iconEmoji { 
+                font-size: 20px; 
+                margin-bottom: 4px; 
+            } 
+        } 
+    } 
+    .navMenu { 
+        background-color: #ffffff; 
+        border-top: 1px solid #eeeeee; 
+    } 
+    .navMenuContainer { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        display: flex; 
+        
+        span { 
+            padding: 15px 20px; 
+            font-size: 14px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            border-right: 1px solid #eeeeee; 
+            
+            &:hover { 
+                background-color: #f5f5f5; 
+                color: $primary;
+            } 
+            &:first-child { 
+                border-left: 1px solid #eeeeee; 
+            } 
+        } 
+    } 
+}
+{{/if}}

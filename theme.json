@@ -47,5 +47,27 @@
     "allowedPages": ["*"],
     "styles": { "navbar": "3", "footer": "5", "filters": "4", "cards": "3", "details": "4" },
     "theme": { "colors": { "primary": "#6200ea", "secondary": "#03dac6", "text": "#ffffff", "bg_light": "#1f1b24", "bg_body": "#121212", "border": "#333333" }, "fonts": { "main": "'Roboto', sans-serif" } }
-  }
+  },
+  "TestNintendo": {
+    "siteName": "TestNintendo",
+    "menuItems": [ 
+      { "label": "Motos", "path": "/" }, 
+      { "label": "Productos", "path": "/products" } 
+    ],
+    "allowedPages": ["*"],
+    "styles": { "navbar": "6", "footer": "1", "filters": "1", "cards": "1", "details": "1" },
+    "theme": { 
+      "colors": { 
+        "primary": "#e4000f", 
+        "secondary": "#484848", 
+        "text": "#484848", 
+        "bg_light": "#ffffff", 
+        "bg_body": "#f8f8f8", 
+        "border": "#eeeeee" 
+      }, 
+      "fonts": { 
+        "main": "'Lato', sans-serif" 
+      } 
+    }
+}
 }
