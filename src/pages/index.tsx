@@ -6,7 +6,8 @@ import ProductCard from '../components/ProductCard';
 
 export default function Home() {
     const siteConfig = config as any;
-    const filterStyleId = siteConfig?.styles?.filters || '1';
+    // Extraemos la disposición en texto ('sidebar' o 'topbar')
+    const filterLayout = siteConfig?.styles?.filterLayout || 'sidebar';
 
     const [motos, setMotos] = useState<any[]>([]);
     const [marcas, setMarcas] = useState<string[]>([]);
@@ -46,8 +47,8 @@ export default function Home() {
             <Head><title>Motos | {siteConfig?.siteName}</title></Head>
             <div className={themeStyles.pageLayout}>
                 
-                {/* FILTROS TOPBAR (ESTILOS 2 y 4) */}
-                {['2', '4'].includes(filterStyleId) && (
+                {/* FILTROS TOPBAR */}
+                {filterLayout === 'topbar' && (
                     <div className={themeStyles.topFilters}>
                         <div className={themeStyles.filterBlock}>
                             <h4>Estado</h4>
@@ -81,8 +82,8 @@ export default function Home() {
                     </div>
                 )}
 
-                {/* FILTROS SIDEBAR (ESTILOS 1, 3 y 5) */}
-                {['1', '3', '5'].includes(filterStyleId) && (
+                {/* FILTROS SIDEBAR */}
+                {filterLayout === 'sidebar' && (
                     <aside className={themeStyles.sidebar}>
                         <div className={themeStyles.filterHeader}>Filtros de Motos</div>
                         <div className={themeStyles.filterBlock}>

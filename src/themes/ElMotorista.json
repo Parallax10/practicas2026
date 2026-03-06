@@ -1,0 +1,9 @@
+{
+    "El Motorista": {
+        "siteName": "El Motorista",
+        "menuItems": [ { "label": "Motos", "path": "/" }, { "label": "Productos", "path": "/products" } ],
+        "allowedPages": ["*"],
+        "styles": { "navbar": "1", "navbarLayout": "classic", "footer": "1", "footerLayout": "columns", "filters": "1", "filterLayout": "sidebar", "cards": "1", "details": "1" },
+        "theme": { "colors": { "primary": "#e3000f", "secondary": "#000000", "text": "#333333", "bg_light": "#ffffff", "bg_body": "#f4f4f4", "border": "#e0e0e0" }, "fonts": { "main": "'Roboto', sans-serif" } }
+    }
+}

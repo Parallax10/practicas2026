@@ -1,0 +1,9 @@
+{
+    "Test 4": {
+        "siteName": "Test 4 Híbrido",
+        "menuItems": [ { "label": "Motos", "path": "/" }, { "label": "Productos", "path": "/products" } ],
+        "allowedPages": ["*"],
+        "styles": { "navbar": "3", "navbarLayout": "classic", "footer": "5", "footerLayout": "columns", "filters": "4", "filterLayout": "topbar", "cards": "3", "details": "4" },
+        "theme": { "colors": { "primary": "#6200ea", "secondary": "#03dac6", "text": "#ffffff", "bg_light": "#1f1b24", "bg_body": "#121212", "border": "#333333" }, "fonts": { "main": "'Roboto', sans-serif" } }
+    }
+}

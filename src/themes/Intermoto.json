@@ -1,0 +1,9 @@
+{
+    "Intermoto": {
+        "siteName": "Intermoto",
+        "menuItems": [ { "label": "Productos", "path": "/products" } ],
+        "allowedPages": ["/products", "/detallesProductos/[url]"],
+        "styles": { "navbar": "2", "navbarLayout": "minimal", "footer": "2", "footerLayout": "centered", "filters": "2", "filterLayout": "topbar", "cards": "1", "details": "1" },
+        "theme": { "colors": { "primary": "#0277bd", "secondary": "#111111", "text": "#222222", "bg_light": "#ffffff", "bg_body": "#e1f5fe", "border": "#81d4fa" }, "fonts": { "main": "'Roboto', sans-serif" } }
+    }
+}

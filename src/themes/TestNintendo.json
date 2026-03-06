@@ -1,0 +1,24 @@
+{
+    "TestNintendo": {
+        "siteName": "TestNintendo",
+        "menuItems": [ 
+        { "label": "Motos", "path": "/" }, 
+        { "label": "Productos", "path": "/products" } 
+        ],
+        "allowedPages": ["*"],
+        "styles": { "navbar": "6", "navbarLayout": "classic", "footer": "1", "footerLayout": "columns", "filters": "1", "filterLayout": "sidebar", "cards": "1", "details": "1" },
+        "theme": { 
+        "colors": { 
+            "primary": "#e4000f", 
+            "secondary": "#484848", 
+            "text": "#484848", 
+            "bg_light": "#ffffff", 
+            "bg_body": "#f8f8f8", 
+            "border": "#eeeeee" 
+        }, 
+        "fonts": { 
+            "main": "'Lato', sans-serif" 
+        } 
+    }
+}
+}

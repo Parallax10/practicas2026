@@ -1,0 +1,9 @@
+{
+    "Lola Moto": {
+        "siteName": "Lola Moto",
+        "menuItems": [ { "label": "Motos", "path": "/" } ],
+        "allowedPages": ["/", "/detallesMotos/[url]"],
+        "styles": { "navbar": "2", "navbarLayout": "minimal", "footer": "2", "footerLayout": "centered", "filters": "2", "filterLayout": "topbar", "cards": "2", "details": "2" },
+        "theme": { "colors": { "primary": "#e83e8c", "secondary": "#333333", "text": "#444444", "bg_light": "#ffffff", "bg_body": "#fce4ec", "border": "#f48fb1" }, "fonts": { "main": "'Roboto', sans-serif" } }
+    }
+}

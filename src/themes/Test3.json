@@ -1,0 +1,9 @@
+{
+    "Test 3": {
+        "siteName": "Test 3 Brutal",
+        "menuItems": [ { "label": "Motos", "path": "/" }, { "label": "Productos", "path": "/products" } ],
+        "allowedPages": ["*"],
+        "styles": { "navbar": "5", "navbarLayout": "classic", "footer": "5", "footerLayout": "columns", "filters": "5", "filterLayout": "sidebar", "cards": "5", "details": "5" },
+        "theme": { "colors": { "primary": "#ff4500", "secondary": "#000000", "text": "#000000", "bg_light": "#ffffff", "bg_body": "#ffffff", "border": "#000000" }, "fonts": { "main": "Courier New, monospace" } }
+    }
+}

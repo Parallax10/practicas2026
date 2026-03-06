@@ -6,7 +6,8 @@ import ProductCard from '../components/ProductCard';
 
 export default function Products() {
     const siteConfig = config as any;
-    const filterStyleId = siteConfig?.styles?.filters || '1';
+    // Extraemos la disposición en texto ('sidebar' o 'topbar')
+    const filterLayout = siteConfig?.styles?.filterLayout || 'sidebar';
 
     const [products, setProducts] = useState<any[]>([]);
     const [categorias, setCategorias] = useState<string[]>([]);
@@ -39,8 +40,8 @@ export default function Products() {
             <Head><title>Tienda | {siteConfig?.siteName}</title></Head>
             <div className={themeStyles.pageLayout}>
                 
-                {/* FILTROS TOPBAR (ESTILOS 2 y 4) */}
-                {['2', '4'].includes(filterStyleId) && (
+                {/* FILTROS TOPBAR */}
+                {filterLayout === 'topbar' && (
                     <div className={themeStyles.topFilters}>
                         <div className={themeStyles.filterBlock}>
                             <h4>Categoría</h4>
@@ -63,8 +64,8 @@ export default function Products() {
                     </div>
                 )}
 
-                {/* FILTROS SIDEBAR (ESTILOS 1, 3 y 5) */}
-                {['1', '3', '5'].includes(filterStyleId) && (
+                {/* FILTROS SIDEBAR */}
+                {filterLayout === 'sidebar' && (
                     <aside className={themeStyles.sidebar}>
                         <div className={themeStyles.filterHeader}>Filtros de Tienda</div>
                         <div className={themeStyles.filterBlock}>

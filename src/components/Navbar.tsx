@@ -7,7 +7,8 @@ import { themeStyles, config } from '../config/index';
 export default function Navbar() {
   const siteConfig = config as any;
   const menuItems = siteConfig?.menuItems || [];
-  const styleId = siteConfig?.styles?.navbar || '1';
+  // Leemos el layout en lugar del número de estilo
+  const layoutType = siteConfig?.styles?.navbarLayout || 'classic';
 
   const { isLoggedIn, cart, favorites } = useSelector((state: RootState) => state.shop);
   const cartItemsCount = cart[siteConfig.siteName]?.length || 0;
@@ -42,7 +43,7 @@ export default function Navbar() {
       </div>
   );
 
-  if (styleId === '2') {
+  if (layoutType === 'minimal') {
       return (
           <header className={themeStyles.navbar}>
               <Link href="/" style={{ textDecoration: 'none' }}><div className={themeStyles.logo}>{siteConfig?.siteName}</div></Link>
@@ -58,6 +59,7 @@ export default function Navbar() {
       );
   }
 
+  // Layout 'classic' por defecto
   return (
     <header className={themeStyles.navbar}>
       <div className={themeStyles.topBar}>

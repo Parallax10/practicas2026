@@ -1,0 +1,9 @@
+{
+    "Test 2": {
+        "siteName": "Test 2 Eco",
+        "menuItems": [ { "label": "Motos", "path": "/" }, { "label": "Productos", "path": "/products" } ],
+        "allowedPages": ["*"],
+        "styles": { "navbar": "4", "navbarLayout": "minimal", "footer": "4", "footerLayout": "centered", "filters": "4", "filterLayout": "topbar", "cards": "4", "details": "4" },
+        "theme": { "colors": { "primary": "#4caf50", "secondary": "#81c784", "text": "#333333", "bg_light": "#ffffff", "bg_body": "#f1f8e9", "border": "#c5e1a5" }, "fonts": { "main": "'Roboto', sans-serif" } }
+    }
+}

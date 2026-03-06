@@ -3,9 +3,10 @@ import { themeStyles, config } from '../config/index';
 
 export default function Footer() {
   const siteConfig = config as any;
-  const styleId = siteConfig?.styles?.footer || '1';
+  // Leemos el layout en lugar del número de estilo
+  const layoutType = siteConfig?.styles?.footerLayout || 'columns';
 
-  if (styleId === '2') {
+  if (layoutType === 'centered') {
       return (
           <footer className={themeStyles.footer}>
               <h2>{siteConfig?.siteName}</h2>
@@ -17,6 +18,7 @@ export default function Footer() {
       );
   }
 
+  // Layout 'columns' por defecto
   return (
     <footer className={themeStyles.footer}>
       <div className={themeStyles.container}>

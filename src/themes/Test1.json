@@ -1,0 +1,9 @@
+{
+    "Test 1": {
+        "siteName": "Test 1 Cyber",
+        "menuItems": [ { "label": "Motos", "path": "/" }, { "label": "Productos", "path": "/products" } ],
+        "allowedPages": ["*"],
+        "styles": { "navbar": "3", "navbarLayout": "classic", "footer": "3", "footerLayout": "centered", "filters": "3", "filterLayout": "sidebar", "cards": "3", "details": "3" },
+        "theme": { "colors": { "primary": "#00ffcc", "secondary": "#ff00ff", "text": "#ffffff", "bg_light": "#1a1a1a", "bg_body": "#0a0a0a", "border": "#333333" }, "fonts": { "main": "'Roboto', sans-serif" } }
+    }
+}
