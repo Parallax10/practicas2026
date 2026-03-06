@@ -46,7 +46,8 @@ export default function Home() {
             <Head><title>Motos | {siteConfig?.siteName}</title></Head>
             <div className={themeStyles.pageLayout}>
                 
-                {filterStyleId === '2' && (
+                {/* FILTROS TOPBAR (ESTILOS 2 y 4) */}
+                {['2', '4'].includes(filterStyleId) && (
                     <div className={themeStyles.topFilters}>
                         <div className={themeStyles.filterBlock}>
                             <h4>Estado</h4>
@@ -80,7 +81,8 @@ export default function Home() {
                     </div>
                 )}
 
-                {filterStyleId === '1' && (
+                {/* FILTROS SIDEBAR (ESTILOS 1, 3 y 5) */}
+                {['1', '3', '5'].includes(filterStyleId) && (
                     <aside className={themeStyles.sidebar}>
                         <div className={themeStyles.filterHeader}>Filtros de Motos</div>
                         <div className={themeStyles.filterBlock}>
@@ -115,7 +117,7 @@ export default function Home() {
                 )}
 
                 <section style={{flex: 1}}>
-                    <div style={{marginBottom: '20px', fontSize: '14px', color: '#666'}}>Mostrando {motosFiltradas.length} motos</div>
+                    <div style={{marginBottom: '20px', fontSize: '14px'}}>Mostrando {motosFiltradas.length} motos</div>
                     <div className={themeStyles.productGrid}>
                         {motosFiltradas.map((moto) => (
                             <ProductCard key={moto.id} product={{id: moto.id, brand: moto.brand, name: moto.title, price: moto.price, imageUrl: moto.thumbnail, type: moto.type, kms: moto.kms, year: moto.year, url: moto.url}} />

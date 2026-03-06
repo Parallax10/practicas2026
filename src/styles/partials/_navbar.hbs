@@ -1,0 +1,535 @@
+/* ==========================================================================
+   1. NAVBAR (Cabecera)
+   ========================================================================== */
+
+{{#if (eq styles.navbar "1")}}
+/* Estilo 1: Clásico (El Motorista) */
+.navbar { 
+    background-color: #ffffff; 
+    width: 100%; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+    color: #333; 
+
+    .topBar { 
+        background-color: #000000; 
+        color: #ffffff; 
+        font-size: 11px; 
+        padding: 8px 0; 
+        font-weight: 500; 
+        letter-spacing: 0.5px; 
+    } 
+    .topBarContainer { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 0 20px; 
+        display: flex; 
+        justify-content: space-between; 
+    } 
+    .mainHeader { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 20px 20px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    } 
+    .logo { 
+        font-size: 32px; 
+        font-weight: 900; 
+        color: $primary; 
+        text-transform: uppercase; 
+        letter-spacing: -1px; 
+        cursor: pointer; 
+    } 
+    .search { 
+        flex: 1; 
+        max-width: 550px; 
+        display: flex; 
+        margin: 0 40px; 
+        
+        input { 
+            width: 100%; 
+            padding: 12px 15px; 
+            border: 2px solid $primary; 
+            border-radius: 4px 0 0 4px; 
+            outline: none; 
+            font-size: 13px; 
+        } 
+        button { 
+            background-color: $primary; 
+            color: #ffffff; 
+            border: none; 
+            padding: 0 25px; 
+            border-radius: 0 4px 4px 0; 
+            cursor: pointer; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            transition: background 0.2s; 
+            
+            &:hover { 
+                background-color: #c2000d; 
+            } 
+        } 
+    } 
+    .icons { 
+        display: flex; 
+        gap: 25px; 
+        font-size: 12px; 
+        font-weight: 600; 
+        
+        .iconBox { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer; 
+            
+            &:hover { 
+                color: $primary; 
+            } 
+            .iconEmoji { 
+                font-size: 22px; 
+                margin-bottom: 2px; 
+            } 
+        } 
+    } 
+    .navMenu { 
+        border-top: 1px solid #eeeeee; 
+        background-color: #ffffff; 
+    } 
+    .navMenuContainer { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 0 20px; 
+        display: flex; 
+        gap: 30px; 
+        
+        span { 
+            padding: 15px 0; 
+            font-size: 14px; 
+            font-weight: 700; 
+            color: #222222; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            border-bottom: 3px solid transparent; 
+            transition: all 0.2s; 
+            
+            &:hover { 
+                color: $primary; 
+                border-bottom: 3px solid $primary; 
+            } 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.navbar "2")}}
+/* Estilo 2: Minimalista (Lola Moto / Intermoto) */
+.navbar { 
+    background: #111; 
+    color: #fff; 
+    text-align: center; 
+    padding: 30px 20px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+    
+    .logo { 
+        font-size: 45px; 
+        font-weight: 900; 
+        color: #fff; 
+        letter-spacing: 2px; 
+        margin-bottom: 20px; 
+        text-transform: uppercase; 
+        cursor: pointer;
+    } 
+    .search { 
+        max-width: 600px; 
+        margin: 0 auto 20px; 
+        display: flex; 
+        
+        input { 
+            width: 100%; 
+            padding: 15px; 
+            border: none; 
+            border-radius: 30px 0 0 30px; 
+            outline: none; 
+            color: #000; 
+        } 
+        button { 
+            background: $primary; 
+            color: #fff; 
+            border: none; 
+            padding: 0 30px; 
+            border-radius: 0 30px 30px 0; 
+            font-weight: bold; 
+            cursor: pointer;
+        } 
+    } 
+    .navMenu { 
+        display: flex; 
+        justify-content: center; 
+        gap: 40px; 
+        flex-wrap: wrap; 
+        text-transform: uppercase; 
+        font-size: 13px; 
+        letter-spacing: 1px; 
+        color: #aaa; 
+        
+        span { 
+            cursor: pointer; 
+            font-weight: 700; 
+            
+            &:hover { 
+                color: $primary; 
+            } 
+        } 
+    } 
+    .icons { 
+        display: flex; 
+        gap: 25px; 
+        font-size: 12px; 
+        font-weight: 600; 
+        color: #aaa; 
+        
+        .iconBox { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer; 
+            
+            &:hover { 
+                color: #fff; 
+            } 
+            .iconEmoji { 
+                font-size: 22px; 
+                margin-bottom: 2px; 
+            } 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.navbar "3")}}
+/* Estilo 3: Cyberpunk */
+.navbar { 
+    background-color: #050505; 
+    border-bottom: 2px solid $primary; 
+    box-shadow: 0 0 15px rgba(0,255,204,0.1); 
+    color: #fff; 
+    
+    .topBar { display: none; } 
+    
+    .mainHeader { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 25px 20px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    } 
+    .logo { 
+        font-size: 38px; 
+        font-weight: 900; 
+        color: $primary; 
+        text-transform: uppercase; 
+        letter-spacing: 4px; 
+        text-shadow: 0 0 10px $primary; 
+        cursor: pointer; 
+    } 
+    .search { 
+        flex: 1; 
+        max-width: 500px; 
+        display: flex; 
+        margin: 0 40px; 
+        
+        input { 
+            width: 100%; 
+            padding: 12px 15px; 
+            background: transparent; 
+            border: 1px solid $border; 
+            color: #fff; 
+            outline: none; 
+            transition: border 0.3s; 
+            
+            &:focus { 
+                border-color: $primary; 
+                box-shadow: 0 0 8px $primary; 
+            } 
+        } 
+        button { 
+            background: transparent; 
+            color: $primary; 
+            border: 1px solid $primary; 
+            padding: 0 25px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: all 0.3s; 
+            
+            &:hover { 
+                background: $primary; 
+                color: #000; 
+                box-shadow: 0 0 15px $primary; 
+            } 
+        } 
+    } 
+    .icons { 
+        display: flex; 
+        gap: 30px; 
+        font-size: 12px; 
+        color: #aaa; 
+        
+        .iconBox { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer; 
+            
+            &:hover { 
+                color: $primary; 
+                text-shadow: 0 0 5px $primary; 
+            } 
+            .iconEmoji { 
+                font-size: 22px; 
+                margin-bottom: 5px; 
+                filter: grayscale(100%); 
+            } 
+        } 
+    } 
+    .navMenu { 
+        background-color: #0a0a0a; 
+        border-top: 1px solid #222; 
+    } 
+    .navMenuContainer { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        display: flex; 
+        justify-content: center; 
+        gap: 40px; 
+        
+        span { 
+            padding: 15px 0; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: #ccc; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.2s; 
+            
+            &:hover { 
+                color: $primary; 
+                text-shadow: 0 0 8px $primary; 
+            } 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.navbar "4")}}
+/* Estilo 4: Eco / Flotante */
+.navbar { 
+    background: transparent; 
+    padding: 20px; 
+    color: #555; 
+    
+    .topBar { display: none; } 
+    
+    .mainHeader { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+    .logo { 
+        font-size: 30px; 
+        font-weight: 900; 
+        color: $primary; 
+        text-transform: lowercase; 
+        letter-spacing: -1px; 
+        margin-bottom: 20px; 
+        cursor: pointer;
+    } 
+    .search { 
+        width: 100%; 
+        max-width: 500px; 
+        display: flex; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        border-radius: 50px; 
+        overflow: hidden; 
+        
+        input { 
+            flex: 1; 
+            padding: 18px 25px; 
+            border: none; 
+            outline: none; 
+            background: #fff; 
+        } 
+        button { 
+            background: $primary; 
+            color: #fff; 
+            border: none; 
+            padding: 0 30px; 
+            font-weight: bold; 
+            cursor: pointer; 
+        } 
+    } 
+    .icons { 
+        position: absolute; 
+        right: 40px; 
+        top: 40px; 
+        display: flex; 
+        gap: 20px; 
+        font-size: 12px; 
+        font-weight: 600; 
+        
+        .iconBox { 
+            background: #fff; 
+            padding: 10px 20px; 
+            border-radius: 30px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            cursor: pointer; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03); 
+            
+            &:hover { 
+                color: $primary; 
+            } 
+        } 
+    } 
+    .navMenu { 
+        margin-top: 20px; 
+        background: #fff; 
+        border-radius: 50px; 
+        padding: 10px 30px; 
+        display: flex; 
+        justify-content: center; 
+        gap: 30px; 
+        box-shadow: 0 5px 20px rgba(0,0,0,0.04); 
+        
+        span { 
+            cursor: pointer; 
+            font-weight: 700; 
+            text-transform: capitalize; 
+            font-size: 15px; 
+            
+            &:hover { 
+                color: $primary; 
+            } 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.navbar "5")}}
+/* Estilo 5: Brutalista */
+.navbar { 
+    background-color: #fff; 
+    border-bottom: 6px solid #000; 
+    color: #000; 
+    
+    .topBar { display: none; } 
+    
+    .mainHeader { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 20px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    } 
+    .logo { 
+        font-size: 40px; 
+        font-weight: 900; 
+        color: #000; 
+        text-transform: uppercase; 
+        background: $primary; 
+        padding: 5px 15px; 
+        border: 3px solid #000; 
+        box-shadow: 6px 6px 0px #000; 
+        cursor: pointer; 
+    } 
+    .search { 
+        flex: 1; 
+        max-width: 550px; 
+        display: flex; 
+        margin: 0 40px; 
+        
+        input { 
+            width: 100%; 
+            padding: 15px; 
+            border: 3px solid #000; 
+            outline: none; 
+            font-size: 16px; 
+            font-weight: bold; 
+        } 
+        button { 
+            background-color: #000; 
+            color: #ffffff; 
+            border: 3px solid #000; 
+            border-left: none; 
+            padding: 0 30px; 
+            cursor: pointer; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            
+            &:hover { 
+                background-color: $primary; 
+                color: #000; 
+            } 
+        } 
+    } 
+    .icons { 
+        display: flex; 
+        gap: 20px; 
+        font-size: 14px; 
+        font-weight: 900; 
+        text-transform: uppercase; 
+        
+        .iconBox { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer; 
+            padding: 10px; 
+            border: 3px solid transparent; 
+            transition: all 0.1s; 
+            
+            &:hover { 
+                border: 3px solid #000; 
+                background: $primary; 
+                box-shadow: 4px 4px 0 #000; 
+                transform: translate(-2px, -2px); 
+            } 
+            .iconEmoji { 
+                font-size: 24px; 
+                margin-bottom: 2px; 
+            } 
+        } 
+    } 
+    .navMenu { 
+        background-color: #fff; 
+        border-top: 4px solid #000; 
+    } 
+    .navMenuContainer { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        display: flex; 
+        
+        span { 
+            padding: 20px 30px; 
+            font-size: 16px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            border-right: 3px solid #000; 
+            
+            &:hover { 
+                background-color: $primary; 
+            } 
+            &:first-child { 
+                border-left: 3px solid #000; 
+            } 
+        } 
+    } 
+}
+{{/if}}

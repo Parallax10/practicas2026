@@ -1,0 +1,789 @@
+/* ==========================================================================
+   5. DETALLES (Fichas de producto y motos)
+   ========================================================================== */
+
+{{#if (eq styles.details "1")}}
+/* Detalles 1: Clásico */
+.detailsPage { 
+    max-width: 1400px; 
+    margin: 30px auto 60px; 
+    padding: 0 20px; 
+} 
+.breadcrumb { 
+    font-size: 12px; 
+    color: #666; 
+    margin-bottom: 30px; 
+    text-transform: uppercase; 
+    font-weight: 500; 
+    
+    a { 
+        color: #666; 
+        text-decoration: none; 
+        
+        &:hover { 
+            color: $primary; 
+        } 
+    } 
+    span { 
+        margin: 0 10px; 
+        color: #ccc; 
+    } 
+} 
+.detailsGrid { 
+    display: grid; 
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 60px; 
+    align-items: start; 
+} 
+.gallery { 
+    .mainImg { 
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 20px; 
+        
+        img { 
+            width: 100%; 
+            height: auto; 
+            max-height: 550px; 
+            object-fit: contain; 
+        } 
+    } 
+    .thumbs { 
+        display: flex; 
+        gap: 15px; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        
+        img { 
+            width: 90px; 
+            height: 90px; 
+            object-fit: contain; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            padding: 5px; 
+            background: #fff; 
+            
+            &:hover, &.active { 
+                border-color: $primary; 
+            } 
+        } 
+    } 
+} 
+.infoBox { 
+    background: transparent; 
+    
+    .stateLabel { 
+        display: inline-block; 
+        font-size: 12px; 
+        font-weight: 800; 
+        color: #fff; 
+        background-color: #333; 
+        padding: 4px 10px; 
+        border-radius: 3px; 
+        text-transform: uppercase; 
+        margin-bottom: 15px; 
+    } 
+    .titleDetail { 
+        font-size: 32px; 
+        font-weight: 900; 
+        line-height: 1.1; 
+        margin: 0 0 15px 0; 
+        text-transform: uppercase; 
+    } 
+    .priceDetail { 
+        font-size: 36px; 
+        font-weight: 900; 
+        color: $primary; 
+        margin-bottom: 5px; 
+    } 
+    .taxInfo { 
+        font-size: 13px; 
+        color: #666; 
+        margin-bottom: 30px; 
+        display: block; 
+    } 
+    .attributes { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        margin-bottom: 30px; 
+        background: #fff; 
+        border: 1px solid #eee; 
+        border-radius: 6px; 
+        padding: 25px; 
+        
+        div { 
+            display: flex; 
+            flex-direction: column; 
+            
+            span { 
+                font-size: 11px; 
+                color: #888; 
+                text-transform: uppercase; 
+                font-weight: bold; 
+                margin-bottom: 5px; 
+            } 
+            strong { 
+                font-weight: 800; 
+                font-size: 15px; 
+            } 
+        } 
+    } 
+    .contactBtn { 
+        width: 100%; 
+        background: $primary; 
+        color: #fff; 
+        border: none; 
+        padding: 18px; 
+        font-size: 16px; 
+        font-weight: 900; 
+        text-transform: uppercase; 
+        cursor: pointer; 
+        border-radius: 4px; 
+        
+        &:hover { 
+            background: #c2000d; 
+        } 
+    } 
+    .financing { 
+        margin-top: 15px; 
+        text-align: center; 
+        
+        button { 
+            width: 100%; 
+            background: #222; 
+            color: #fff; 
+            border: none; 
+            padding: 15px; 
+            font-size: 14px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            
+            &:hover { 
+                background: #000; 
+            } 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.details "2")}}
+/* Detalles 2: Minimalista */
+.detailsPage { 
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+} 
+.breadcrumb { 
+    font-size: 14px; 
+    margin-bottom: 20px; 
+    
+    a { 
+        color: $primary; 
+        text-decoration: none; 
+        font-weight: bold; 
+    } 
+} 
+.detailsGrid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+} 
+.gallery { 
+    display: flex; 
+    overflow-x: auto; 
+    gap: 15px; 
+    padding-bottom: 10px; 
+    
+    img { 
+        height: 350px; 
+        border-radius: 12px; 
+        object-fit: contain; 
+        background: #fff; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    } 
+} 
+.infoBox { 
+    background: #fff; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+    
+    .titleDetail { 
+        font-size: 35px; 
+        font-weight: 900; 
+        margin-top: 10px; 
+    } 
+    .priceDetail { 
+        font-size: 32px; 
+        color: $primary; 
+        font-weight: 900; 
+        margin-bottom: 20px; 
+    } 
+    .attributes { 
+        display: flex; 
+        gap: 20px; 
+        flex-wrap: wrap; 
+        margin: 30px 0; 
+        
+        div { 
+            background: #f9f9f9; 
+            padding: 20px; 
+            border-radius: 8px; 
+            flex: 1; 
+            min-width: 120px; 
+            text-align: center; 
+            border: 1px solid #eee; 
+            
+            span { 
+                display: block; 
+                font-size: 12px; 
+                color: #888; 
+                text-transform: uppercase; 
+                font-weight: 700; 
+                margin-bottom: 8px; 
+            } 
+            strong { 
+                font-size: 18px; 
+            } 
+        } 
+    } 
+    .contactBtn { 
+        width: 100%; 
+        background: #000; 
+        color: #fff; 
+        padding: 20px 30px; 
+        border-radius: 30px; 
+        border: none; 
+        font-size: 16px; 
+        font-weight: bold; 
+        cursor: pointer; 
+        
+        &:hover { 
+            background: $primary; 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.details "3")}}
+/* Detalles 3: Cyberpunk */
+.detailsPage { 
+    max-width: 1400px; 
+    margin: 40px auto 80px; 
+    padding: 0 20px; 
+    color: #fff; 
+} 
+.breadcrumb { 
+    font-size: 13px; 
+    color: #888; 
+    margin-bottom: 40px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    
+    a { 
+        color: $primary; 
+        text-decoration: none; 
+        text-shadow: 0 0 5px $primary; 
+    } 
+    span { 
+        margin: 0 15px; 
+        color: #444; 
+    } 
+} 
+.detailsGrid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    align-items: center; 
+} 
+.gallery { 
+    background: #050505; 
+    border: 1px solid #222; 
+    padding: 40px; 
+    border-radius: 8px; 
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8); 
+    
+    .mainImg { 
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 30px; 
+        
+        img { 
+            width: 100%; 
+            height: auto; 
+            max-height: 500px; 
+            object-fit: contain; 
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.05)); 
+        } 
+    } 
+    .thumbs { 
+        display: flex; 
+        gap: 15px; 
+        justify-content: center; 
+        
+        img { 
+            width: 80px; 
+            height: 80px; 
+            object-fit: contain; 
+            border: 1px solid #333; 
+            background: #0a0a0a; 
+            cursor: pointer; 
+            padding: 10px; 
+            transition: all 0.3s; 
+            
+            &:hover, &.active { 
+                border-color: $primary; 
+                box-shadow: 0 0 10px $primary; 
+            } 
+        } 
+    } 
+} 
+.infoBox { 
+    .stateLabel { 
+        display: inline-block; 
+        font-size: 12px; 
+        font-weight: 900; 
+        color: #000; 
+        background: $primary; 
+        padding: 5px 15px; 
+        text-transform: uppercase; 
+        letter-spacing: 3px; 
+        margin-bottom: 20px; 
+        box-shadow: 0 0 15px $primary; 
+    } 
+    .titleDetail { 
+        font-size: 40px; 
+        font-weight: 300; 
+        margin: 0 0 20px 0; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        color: #eee; 
+    } 
+    .priceDetail { 
+        font-size: 48px; 
+        font-weight: 900; 
+        color: #fff; 
+        margin-bottom: 10px; 
+        text-shadow: 0 0 15px rgba(255,255,255,0.5); 
+    } 
+    .taxInfo { 
+        font-size: 13px; 
+        color: #666; 
+        margin-bottom: 40px; 
+        display: block; 
+    } 
+    .attributes { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        margin-bottom: 40px; 
+        
+        div { 
+            background: #111; 
+            border: 1px solid #222; 
+            padding: 20px; 
+            border-left: 3px solid $primary; 
+            
+            span { 
+                font-size: 10px; 
+                color: #888; 
+                text-transform: uppercase; 
+                letter-spacing: 2px; 
+                margin-bottom: 8px; 
+                display: block; 
+            } 
+            strong { 
+                font-weight: 500; 
+                font-size: 18px; 
+                color: #ddd; 
+            } 
+        } 
+    } 
+    .contactBtn { 
+        width: 100%; 
+        background: transparent; 
+        color: $primary; 
+        border: 2px solid $primary; 
+        padding: 20px; 
+        font-size: 18px; 
+        font-weight: 900; 
+        text-transform: uppercase; 
+        letter-spacing: 4px; 
+        cursor: pointer; 
+        transition: all 0.3s; 
+        
+        &:hover { 
+            background: $primary; 
+            color: #000; 
+            box-shadow: 0 0 20px $primary; 
+        } 
+    } 
+    .financing { 
+        margin-top: 20px; 
+        text-align: center; 
+        
+        button { 
+            width: 100%; 
+            background: #111; 
+            color: #aaa; 
+            border: 1px solid #333; 
+            padding: 15px; 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            
+            &:hover { 
+                color: #fff; 
+                border-color: #666; 
+            } 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.details "4")}}
+/* Detalles 4: Eco Rounded */
+.detailsPage { 
+    max-width: 1200px; 
+    margin: 60px auto; 
+    padding: 0 20px; 
+} 
+.breadcrumb { 
+    font-size: 14px; 
+    color: #888; 
+    margin-bottom: 40px; 
+    display: flex; 
+    gap: 15px; 
+    
+    a { 
+        color: #666; 
+        text-decoration: none; 
+        background: #fff; 
+        padding: 8px 20px; 
+        border-radius: 30px; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+        
+        &:hover { 
+            color: $primary; 
+        } 
+    } 
+    span { 
+        display: none; 
+    } 
+} 
+.detailsGrid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    align-items: center; 
+} 
+.gallery { 
+    .mainImg { 
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 30px; 
+        background: #fff; 
+        border-radius: 40px; 
+        padding: 40px; 
+        box-shadow: 0 10px 40px rgba(0,0,0,0.04); 
+        
+        img { 
+            width: 100%; 
+            height: auto; 
+            max-height: 500px; 
+            object-fit: contain; 
+        } 
+    } 
+    .thumbs { 
+        display: flex; 
+        gap: 15px; 
+        justify-content: center; 
+        
+        img { 
+            width: 80px; 
+            height: 80px; 
+            object-fit: contain; 
+            background: #fff; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            padding: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+            border: 2px solid transparent; 
+            
+            &:hover, &.active { 
+                border-color: $primary; 
+            } 
+        } 
+    } 
+} 
+.infoBox { 
+    .stateLabel { 
+        display: inline-block; 
+        font-size: 13px; 
+        font-weight: 700; 
+        color: $primary; 
+        background: #fff; 
+        padding: 8px 20px; 
+        border-radius: 30px; 
+        text-transform: capitalize; 
+        margin-bottom: 20px; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+    } 
+    .titleDetail { 
+        font-size: 42px; 
+        font-weight: 900; 
+        line-height: 1.2; 
+        margin: 0 0 20px 0; 
+        color: #222; 
+    } 
+    .priceDetail { 
+        font-size: 40px; 
+        font-weight: 900; 
+        color: $primary; 
+        margin-bottom: 10px; 
+    } 
+    .taxInfo { 
+        font-size: 14px; 
+        color: #999; 
+        margin-bottom: 40px; 
+        display: block; 
+    } 
+    .attributes { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 15px; 
+        margin-bottom: 40px; 
+        
+        div { 
+            background: #fff; 
+            border-radius: 20px; 
+            padding: 20px 30px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03); 
+            flex: 1; 
+            min-width: 130px; 
+            
+            span { 
+                font-size: 12px; 
+                color: #aaa; 
+                text-transform: capitalize; 
+                margin-bottom: 5px; 
+                display: block; 
+            } 
+            strong { 
+                font-weight: 800; 
+                font-size: 18px; 
+                color: #444; 
+            } 
+        } 
+    } 
+    .contactBtn { 
+        width: 100%; 
+        background: $primary; 
+        color: #fff; 
+        border: none; 
+        padding: 25px; 
+        font-size: 18px; 
+        font-weight: 700; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        box-shadow: 0 10px 20px rgba(76,175,80,0.2); 
+        transition: transform 0.2s; 
+        
+        &:hover { 
+            transform: translateY(-3px); 
+        } 
+    } 
+    .financing { 
+        display: none; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.details "5")}}
+/* Detalles 5: Brutalista */
+.detailsPage { 
+    max-width: 1400px; 
+    margin: 60px auto; 
+    padding: 0 20px; 
+} 
+.breadcrumb { 
+    font-size: 16px; 
+    font-weight: 900; 
+    color: #000; 
+    margin-bottom: 40px; 
+    text-transform: uppercase; 
+    
+    a { 
+        color: #000; 
+        text-decoration: underline; 
+        
+        &:hover { 
+            background: $primary; 
+        } 
+    } 
+    span { 
+        margin: 0 15px; 
+    } 
+} 
+.detailsGrid { 
+    display: grid; 
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 60px; 
+    align-items: start; 
+} 
+.gallery { 
+    border: 6px solid #000; 
+    background: #fff; 
+    box-shadow: 12px 12px 0 #000; 
+    padding: 40px; 
+    
+    .mainImg { 
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 40px; 
+        
+        img { 
+            width: 100%; 
+            height: auto; 
+            max-height: 600px; 
+            object-fit: contain; 
+        } 
+    } 
+    .thumbs { 
+        display: flex; 
+        gap: 20px; 
+        justify-content: center; 
+        
+        img { 
+            width: 100px; 
+            height: 100px; 
+            object-fit: contain; 
+            border: 4px solid #000; 
+            cursor: pointer; 
+            padding: 10px; 
+            transition: all 0.1s; 
+            
+            &:hover, &.active { 
+                background: $primary; 
+                transform: translate(4px, 4px); 
+                box-shadow: -4px -4px 0 #000; 
+            } 
+        } 
+    } 
+} 
+.infoBox { 
+    background: #fff; 
+    border: 6px solid #000; 
+    box-shadow: 12px 12px 0 #000; 
+    padding: 40px; 
+    
+    .stateLabel { 
+        display: inline-block; 
+        font-size: 16px; 
+        font-weight: 900; 
+        color: #fff; 
+        background: #000; 
+        padding: 10px 20px; 
+        text-transform: uppercase; 
+        margin-bottom: 30px; 
+    } 
+    .titleDetail { 
+        font-size: 48px; 
+        font-weight: 900; 
+        line-height: 1; 
+        margin: 0 0 20px 0; 
+        text-transform: uppercase; 
+        color: #000; 
+    } 
+    .priceDetail { 
+        font-size: 50px; 
+        font-weight: 900; 
+        color: #000; 
+        background: $primary; 
+        padding: 10px 20px; 
+        border: 4px solid #000; 
+        display: inline-block; 
+        margin-bottom: 20px; 
+    } 
+    .taxInfo { 
+        font-size: 16px; 
+        font-weight: bold; 
+        color: #000; 
+        margin-bottom: 40px; 
+        display: block; 
+        border-bottom: 4px dashed #000; 
+        padding-bottom: 20px; 
+    } 
+    .attributes { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 15px; 
+        margin-bottom: 40px; 
+        
+        div { 
+            display: flex; 
+            justify-content: space-between; 
+            border-bottom: 4px solid #000; 
+            padding-bottom: 10px; 
+            
+            span { 
+                font-size: 18px; 
+                font-weight: 900; 
+                text-transform: uppercase; 
+                color: #000; 
+            } 
+            strong { 
+                font-weight: 900; 
+                font-size: 22px; 
+                color: #000; 
+            } 
+        } 
+    } 
+    .contactBtn { 
+        width: 100%; 
+        background: #000; 
+        color: #fff; 
+        border: none; 
+        padding: 25px; 
+        font-size: 24px; 
+        font-weight: 900; 
+        text-transform: uppercase; 
+        cursor: pointer; 
+        border: 4px solid #000; 
+        transition: all 0.1s; 
+        
+        &:hover { 
+            background: $primary; 
+            color: #000; 
+            box-shadow: 6px 6px 0 #000; 
+            transform: translate(-6px, -6px); 
+        } 
+    } 
+    .financing { 
+        margin-top: 20px; 
+        text-align: center; 
+        
+        button { 
+            width: 100%; 
+            background: #fff; 
+            color: #000; 
+            border: 4px solid #000; 
+            padding: 20px; 
+            font-size: 18px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            
+            &:hover { 
+                background: #000; 
+                color: #fff; 
+            } 
+        } 
+    } 
+}
+{{/if}}

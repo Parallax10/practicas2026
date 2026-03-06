@@ -1,0 +1,220 @@
+/* ==========================================================================
+   4. FOOTER (Pie de página)
+   ========================================================================== */
+
+{{#if (eq styles.footer "1")}}
+/* Footer 1: Clásico 4 Columnas */
+.footer { 
+    background: #1a1a1a; 
+    color: #ccc; 
+    padding: 60px 20px 30px; 
+    margin-top: 60px; 
+    font-size: 13px; 
+    
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 40px; 
+    } 
+    h4 { 
+        color: #fff; 
+        font-size: 16px; 
+        margin-bottom: 20px; 
+        text-transform: uppercase; 
+    } 
+    ul { 
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        
+        li { 
+            margin-bottom: 10px; 
+            cursor: pointer; 
+            
+            &:hover { 
+                color: #fff; 
+            } 
+        } 
+    } 
+    .bottomBar { 
+        grid-column: 1 / -1; 
+        border-top: 1px solid #333; 
+        margin-top: 40px; 
+        padding-top: 20px; 
+        text-align: center; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.footer "2")}}
+/* Footer 2: Centrado Minimalista */
+.footer { 
+    background: $primary; 
+    color: #fff; 
+    padding: 60px 20px; 
+    text-align: center; 
+    margin-top: 60px; 
+    
+    .links { 
+        display: flex; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 30px; 
+        margin: 20px 0; 
+        font-weight: bold; 
+        font-size: 14px; 
+        text-transform: uppercase; 
+        cursor: pointer; 
+        
+        span:hover { 
+            text-decoration: underline; 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.footer "3")}}
+/* Footer 3: Cyberpunk */
+.footer { 
+    background: #050505; 
+    color: #666; 
+    border-top: 1px solid #222; 
+    padding: 60px 20px; 
+    margin-top: 80px; 
+    text-align: center; 
+    
+    .container { 
+        max-width: 800px; 
+        margin: 0 auto; 
+    } 
+    h2 { 
+        color: $primary; 
+        text-shadow: 0 0 10px $primary; 
+        letter-spacing: 5px; 
+        text-transform: uppercase; 
+        margin-bottom: 30px; 
+    } 
+    .links { 
+        display: flex; 
+        justify-content: center; 
+        gap: 40px; 
+        margin-bottom: 40px; 
+        
+        span { 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: color 0.3s; 
+            
+            &:hover { 
+                color: #fff; 
+                text-shadow: 0 0 8px #fff; 
+            } 
+        } 
+    } 
+    .bottomBar { 
+        font-size: 12px; 
+        letter-spacing: 1px; 
+        color: #444; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.footer "4")}}
+/* Footer 4: Eco Rounded */
+.footer { 
+    background: $primary; 
+    color: #fff; 
+    padding: 80px 20px 40px; 
+    margin-top: 80px; 
+    border-radius: 50px 50px 0 0; 
+    
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+    h2 { 
+        font-size: 40px; 
+        margin: 0 0 20px; 
+        font-weight: 900; 
+    } 
+    .links { 
+        display: flex; 
+        gap: 30px; 
+        font-size: 16px; 
+        margin-bottom: 40px; 
+        
+        span { 
+            cursor: pointer; 
+            opacity: 0.8; 
+            transition: opacity 0.2s; 
+            
+            &:hover { 
+                opacity: 1; 
+            } 
+        } 
+    } 
+    .bottomBar { 
+        opacity: 0.5; 
+        font-size: 14px; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.footer "5")}}
+/* Footer 5: Brutalista */
+.footer { 
+    background: #fff; 
+    color: #000; 
+    border-top: 8px solid #000; 
+    padding: 80px 20px 40px; 
+    margin-top: 100px; 
+    
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 60px; 
+    } 
+    h2 { 
+        font-size: 60px; 
+        font-weight: 900; 
+        margin: 0 0 20px; 
+        text-transform: uppercase; 
+        line-height: 1; 
+    } 
+    .links { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px; 
+        
+        span { 
+            font-size: 20px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            border-bottom: 4px solid transparent; 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            
+            &:hover { 
+                border-bottom-color: $primary; 
+            } 
+        } 
+    } 
+    .bottomBar { 
+        grid-column: 1 / -1; 
+        border-top: 4px solid #000; 
+        margin-top: 40px; 
+        padding-top: 30px; 
+        font-size: 18px; 
+        font-weight: 900; 
+        text-align: right; 
+    } 
+}
+{{/if}}

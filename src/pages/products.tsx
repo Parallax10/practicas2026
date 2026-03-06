@@ -39,7 +39,8 @@ export default function Products() {
             <Head><title>Tienda | {siteConfig?.siteName}</title></Head>
             <div className={themeStyles.pageLayout}>
                 
-                {filterStyleId === '2' && (
+                {/* FILTROS TOPBAR (ESTILOS 2 y 4) */}
+                {['2', '4'].includes(filterStyleId) && (
                     <div className={themeStyles.topFilters}>
                         <div className={themeStyles.filterBlock}>
                             <h4>Categoría</h4>
@@ -62,7 +63,8 @@ export default function Products() {
                     </div>
                 )}
 
-                {filterStyleId === '1' && (
+                {/* FILTROS SIDEBAR (ESTILOS 1, 3 y 5) */}
+                {['1', '3', '5'].includes(filterStyleId) && (
                     <aside className={themeStyles.sidebar}>
                         <div className={themeStyles.filterHeader}>Filtros de Tienda</div>
                         <div className={themeStyles.filterBlock}>
@@ -95,7 +97,7 @@ export default function Products() {
                 )}
 
                 <section style={{flex: 1}}>
-                    <div style={{marginBottom: '20px', fontSize: '14px', color: '#666'}}>Mostrando {filtrados.length} artículos</div>
+                    <div style={{marginBottom: '20px', fontSize: '14px'}}>Mostrando {filtrados.length} artículos</div>
                     
                     <div className={themeStyles.productGrid}>
                         {filtrados.map((prod) => (

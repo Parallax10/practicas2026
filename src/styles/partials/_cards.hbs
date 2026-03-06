@@ -1,0 +1,333 @@
+/* ==========================================================================
+   3. PRODUCT CARDS (Tarjetas)
+   ========================================================================== */
+
+{{#if (eq styles.cards "1")}}
+/* Tarjeta 1: Clásica */
+.card { 
+    background-color: transparent; 
+    border: 1px solid transparent; 
+    padding: 15px; 
+    display: flex; 
+    flex-direction: column; 
+    text-decoration: none; 
+    color: inherit; 
+    transition: all 0.2s ease-in-out; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    position: relative; 
+    
+    &:hover { 
+        background-color: #ffffff; 
+        border-color: #e0e0e0; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    } 
+    .badgeState { 
+        font-size: 11px; 
+        font-weight: 800; 
+        color: #888; 
+        text-transform: uppercase; 
+        margin-bottom: 5px; 
+    } 
+    .imgBox { 
+        height: 200px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin-bottom: 15px; 
+        
+        img { 
+            max-height: 100%; 
+            max-width: 100%; 
+            object-fit: contain; 
+        } 
+    } 
+    .title { 
+        font-size: 15px; 
+        font-weight: 700; 
+        margin: 0 0 10px 0; 
+        line-height: 1.3; 
+        text-transform: uppercase; 
+        height: 40px; 
+        overflow: hidden; 
+    } 
+    .price { 
+        font-size: 22px; 
+        font-weight: 900; 
+        color: $primary; 
+        margin-bottom: 5px; 
+    } 
+    .specs { 
+        font-size: 13px; 
+        color: #666; 
+        margin-top: auto; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.cards "2")}}
+/* Tarjeta 2: Horizontal Minimalista */
+.card { 
+    display: flex; 
+    gap: 20px; 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    color: inherit; 
+    align-items: center; 
+    border: 1px solid $border; 
+    transition: border-color 0.2s; 
+    position: relative; 
+    
+    &:hover { 
+        border-color: $primary; 
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06); 
+    } 
+    .imgBox { 
+        width: 180px; 
+        height: 180px; 
+        flex-shrink: 0; 
+        background: #f9f9f9; 
+        padding: 15px; 
+        border-radius: 8px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        
+        img { 
+            max-width: 100%; 
+            max-height: 100%; 
+            object-fit: contain; 
+        } 
+    } 
+    .infoBox { 
+        flex: 1; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        
+        .title { 
+            font-size: 20px; 
+            font-weight: 900; 
+            margin: 0 0 10px; 
+        } 
+        .price { 
+            font-size: 26px; 
+            color: $primary; 
+            font-weight: 900; 
+            margin-bottom: 10px; 
+        } 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.cards "3")}}
+/* Tarjeta 3: Cyberpunk */
+.card { 
+    background-color: #111; 
+    border: 1px solid #333; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    text-decoration: none; 
+    color: #fff; 
+    transition: all 0.3s; 
+    cursor: pointer; 
+    position: relative; 
+    overflow: hidden; 
+    
+    &:hover { 
+        border-color: $primary; 
+        box-shadow: 0 0 20px rgba(0,255,204,0.15); 
+        transform: translateY(-5px); 
+    } 
+    .badgeState { 
+        font-size: 10px; 
+        font-weight: 900; 
+        color: $primary; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        margin-bottom: 10px; 
+    } 
+    .imgBox { 
+        height: 220px; 
+        background: #050505; 
+        border: 1px solid #222; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin-bottom: 20px; 
+        padding: 10px; 
+        
+        img { 
+            max-height: 100%; 
+            max-width: 100%; 
+            object-fit: contain; 
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); 
+        } 
+    } 
+    .title { 
+        font-size: 16px; 
+        font-weight: 500; 
+        margin: 0 0 15px 0; 
+        height: 45px; 
+        overflow: hidden; 
+        color: #ccc; 
+    } 
+    .price { 
+        font-size: 26px; 
+        font-weight: 900; 
+        color: #fff; 
+        margin-bottom: 5px; 
+        text-shadow: 0 0 8px rgba(255,255,255,0.3); 
+    } 
+    .specs { 
+        font-size: 12px; 
+        color: #666; 
+        margin-top: auto; 
+        border-top: 1px solid #222; 
+        padding-top: 10px; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.cards "4")}}
+/* Tarjeta 4: Eco */
+.card { 
+    background-color: #fff; 
+    padding: 30px; 
+    display: flex; 
+    flex-direction: column; 
+    text-decoration: none; 
+    color: #444; 
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+    border-radius: 30px; 
+    position: relative; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    
+    &:hover { 
+        transform: translateY(-10px); 
+        box-shadow: 0 20px 40px rgba(76,175,80,0.1); 
+    } 
+    .badgeState { 
+        background: #f1f8e9; 
+        color: $primary; 
+        padding: 5px 15px; 
+        border-radius: 20px; 
+        font-size: 11px; 
+        font-weight: bold; 
+        align-self: flex-start; 
+        margin-bottom: 15px; 
+        text-transform: capitalize; 
+    } 
+    .imgBox { 
+        height: 220px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin-bottom: 20px; 
+        
+        img { 
+            max-height: 100%; 
+            max-width: 100%; 
+            object-fit: contain; 
+            transition: transform 0.5s; 
+        } 
+    } 
+    &:hover .imgBox img { 
+        transform: scale(1.05); 
+    } 
+    .title { 
+        font-size: 18px; 
+        font-weight: 700; 
+        margin: 0 0 10px 0; 
+        line-height: 1.4; 
+        color: #222; 
+    } 
+    .price { 
+        font-size: 24px; 
+        font-weight: 900; 
+        color: $primary; 
+        margin-bottom: 10px; 
+    } 
+    .specs { 
+        font-size: 13px; 
+        color: #888; 
+        margin-top: auto; 
+    } 
+}
+{{/if}}
+
+{{#if (eq styles.cards "5")}}
+/* Tarjeta 5: Brutalista */
+.card { 
+    background-color: #fff; 
+    border: 4px solid #000; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    text-decoration: none; 
+    color: #000; 
+    transition: all 0.1s; 
+    cursor: pointer; 
+    position: relative; 
+    box-shadow: 8px 8px 0 #000; 
+    
+    &:hover { 
+        transform: translate(4px, 4px); 
+        box-shadow: 4px 4px 0 #000; 
+        background-color: #fafafa; 
+    } 
+    .badgeState { 
+        font-size: 14px; 
+        font-weight: 900; 
+        background: $primary; 
+        color: #fff; 
+        padding: 5px 10px; 
+        border: 2px solid #000; 
+        text-transform: uppercase; 
+        margin-bottom: 15px; 
+        align-self: flex-start; 
+    } 
+    .imgBox { 
+        height: 250px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin-bottom: 15px; 
+        border-bottom: 4px solid #000; 
+        padding-bottom: 15px; 
+        
+        img { 
+            max-height: 100%; 
+            max-width: 100%; 
+            object-fit: contain; 
+        } 
+    } 
+    .title { 
+        font-size: 20px; 
+        font-weight: 900; 
+        margin: 0 0 15px 0; 
+        text-transform: uppercase; 
+        line-height: 1.1; 
+    } 
+    .price { 
+        font-size: 32px; 
+        font-weight: 900; 
+        color: #000; 
+        background: $primary; 
+        padding: 5px 10px; 
+        border: 3px solid #000; 
+        display: inline-block; 
+        margin-bottom: 15px; 
+    } 
+    .specs { 
+        font-size: 14px; 
+        font-weight: bold; 
+        color: #000; 
+        margin-top: auto; 
+    } 
+}
+{{/if}}
