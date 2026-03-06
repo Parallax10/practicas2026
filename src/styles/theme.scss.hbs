@@ -8,51 +8,52 @@ $border: {{theme.colors.border}};
 :global(body) { margin: 0; font-family: {{{theme.fonts.main}}}; background-color: $bg-body; color: #333; }
 
 /* ================== NAVBAR ================== */
-.navbar_1 {
+{{#if (eq styles.navbar "1")}}
+.navbar {
     background-color: #ffffff; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     .topBar { background-color: #000000; color: #ffffff; font-size: 11px; padding: 8px 0; font-weight: 500; letter-spacing: 0.5px; }
     .topBarContainer { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; }
     .mainHeader { max-width: 1400px; margin: 0 auto; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 32px; font-weight: 900; color: $primary; text-transform: uppercase; letter-spacing: -1px; cursor: pointer; }
-    .search {
-        flex: 1; max-width: 550px; display: flex; margin: 0 40px;
-        input { width: 100%; padding: 12px 15px; border: 2px solid $primary; border-radius: 4px 0 0 4px; outline: none; font-size: 13px; }
-        button { background-color: $primary; color: #ffffff; border: none; padding: 0 25px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: background 0.2s; &:hover { background-color: #c2000d; } }
-    }
+    .search { flex: 1; max-width: 550px; display: flex; margin: 0 40px; input { width: 100%; padding: 12px 15px; border: 2px solid $primary; border-radius: 4px 0 0 4px; outline: none; font-size: 13px; } button { background-color: $primary; color: #ffffff; border: none; padding: 0 25px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; } }
     .icons { display: flex; gap: 25px; font-size: 12px; font-weight: 600; color: #333; .iconBox { display: flex; flex-direction: column; align-items: center; cursor: pointer; &:hover { color: $primary; } .iconEmoji { font-size: 22px; margin-bottom: 2px; } } }
     .navMenu { border-top: 1px solid #eeeeee; background-color: #ffffff; }
     .navMenuContainer { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; gap: 30px; span { padding: 15px 0; font-size: 14px; font-weight: 700; color: #222222; text-transform: uppercase; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; &:hover { color: $primary; border-bottom: 3px solid $primary; } } }
 }
+{{/if}}
 
-.navbar_2 {
+{{#if (eq styles.navbar "2")}}
+.navbar {
     background: #111; color: #fff; text-align: center; padding: 30px 20px;
     .logo { font-size: 45px; font-weight: 900; color: #fff; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; cursor: pointer;}
     .search { max-width: 600px; margin: 0 auto 20px; display: flex; input { width: 100%; padding: 15px; border: none; border-radius: 30px 0 0 30px; outline: none; color: #000; } button { background: $primary; color: #fff; border: none; padding: 0 30px; border-radius: 0 30px 30px 0; font-weight: bold; cursor: pointer;} }
     .navMenu { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; color: #aaa; span { cursor: pointer; &:hover { color: $primary; } } }
 }
+{{/if}}
 
 /* ================== LAYOUT & FILTROS ================== */
-.pageLayout_1 { display: flex; gap: 30px; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-.sidebar_1 {
+{{#if (eq styles.filters "1")}}
+.pageLayout { display: flex; gap: 30px; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
+.sidebar {
     width: 260px; flex-shrink: 0; font-size: 14px;
     .filterHeader { margin-bottom: 20px; font-weight: 900; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 10px; font-size: 16px;}
-    .filterBlock {
-        margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 15px;
-        h4 { font-size: 13px; font-weight: 700; margin: 0 0 15px 0; color: #111; text-transform: uppercase; }
-        .filterList { max-height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; label { display: flex; align-items: center; gap: 8px; cursor: pointer; color: #555; font-size: 13px; &:hover { color: #000; } input { accent-color: $primary; } } }
-        .rangeInputs { display: flex; gap: 10px; align-items: center; input { width: 100%; padding: 8px; border: 1px solid #ddd; font-size: 12px; outline: none; &:focus { border-color: $primary; } } }
-    }
+    .filterBlock { margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 15px; h4 { font-size: 13px; font-weight: 700; margin: 0 0 15px 0; color: #111; text-transform: uppercase; } .filterList { max-height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; label { display: flex; align-items: center; gap: 8px; cursor: pointer; color: #555; font-size: 13px; &:hover { color: #000; } input { accent-color: $primary; } } } .rangeInputs { display: flex; gap: 10px; align-items: center; input { width: 100%; padding: 8px; border: 1px solid #ddd; font-size: 12px; outline: none; &:focus { border-color: $primary; } } } }
 }
+.productGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; flex: 1; align-content: start; }
+{{/if}}
 
-.pageLayout_2 { display: flex; flex-direction: column; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-.topFilters_2 {
+{{#if (eq styles.filters "2")}}
+.pageLayout { display: flex; flex-direction: column; max-width: 1400px; margin: 40px auto; padding: 0 20px; }
+.topFilters {
     display: flex; gap: 20px; overflow-x: auto; padding: 20px; background: #fff; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     .filterBlock { min-width: 180px; h4 { font-size: 12px; color: #888; margin: 0 0 10px; text-transform: uppercase; } select { width: 100%; padding: 10px; border: 1px solid $border; border-radius: 4px; outline: none; } input { width: 100%; padding: 10px; border: 1px solid $border; border-radius: 4px; outline: none; } }
 }
+.productGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+{{/if}}
 
-/* ================== GRID & TARJETAS ================== */
-.productGrid_1 { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; flex: 1; align-content: start; }
-.card_1 {
+/* ================== TARJETAS PRODUCTO ================== */
+{{#if (eq styles.cards "1")}}
+.card {
     background-color: transparent; border: 1px solid transparent; padding: 15px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: all 0.2s ease-in-out; cursor: pointer; border-radius: 4px;
     &:hover { background-color: #ffffff; border-color: #e0e0e0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     .badgeState { font-size: 11px; font-weight: 800; color: #888; text-transform: uppercase; margin-bottom: 5px; }
@@ -61,65 +62,64 @@ $border: {{theme.colors.border}};
     .price { font-size: 22px; font-weight: 900; color: $primary; margin-bottom: 5px; }
     .specs { font-size: 13px; color: #666; margin-top: auto; }
 }
+{{/if}}
 
-.productGrid_2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.card_2 {
+{{#if (eq styles.cards "2")}}
+.card {
     display: flex; gap: 20px; background: #fff; padding: 15px; border-radius: 8px; text-decoration: none; color: inherit; align-items: center; border: 1px solid $border;
     &:hover { border-color: $primary; }
     .imgBox { width: 150px; height: 150px; flex-shrink: 0; background: #f9f9f9; padding: 10px; border-radius: 4px; img { width: 100%; height: 100%; object-fit: contain; } }
     .infoBox { flex: 1; .title { font-size: 18px; font-weight: 900; margin: 0 0 10px; } .price { font-size: 24px; color: $primary; font-weight: bold; } }
 }
+{{/if}}
 
 /* ================== FOOTER ================== */
-.footer_1 {
+{{#if (eq styles.footer "1")}}
+.footer {
     background: #1a1a1a; color: #ccc; padding: 60px 20px 30px; margin-top: 60px; font-size: 13px;
     .container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
     h4 { color: #fff; font-size: 16px; margin-bottom: 20px; text-transform: uppercase; }
     ul { list-style: none; padding: 0; margin: 0; li { margin-bottom: 10px; cursor: pointer; &:hover { color: #fff; } } }
     .bottomBar { grid-column: 1 / -1; border-top: 1px solid #333; margin-top: 40px; padding-top: 20px; text-align: center; }
 }
+{{/if}}
 
-.footer_2 {
+{{#if (eq styles.footer "2")}}
+.footer {
     background: $primary; color: #fff; padding: 60px 20px; text-align: center; margin-top: 60px;
     .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 20px 0; font-weight: bold; font-size: 14px; text-transform: uppercase; cursor: pointer; span:hover { text-decoration: underline; } }
 }
+{{/if}}
 
 /* ================== DETALLES ================== */
-.detailsPage_1 { max-width: 1400px; margin: 30px auto 60px; padding: 0 20px; }
-.breadcrumb_1 { font-size: 12px; color: #666; margin-bottom: 30px; text-transform: uppercase; font-weight: 500; a { color: #666; text-decoration: none; transition: color 0.2s; &:hover { color: $primary; } } span { margin: 0 10px; color: #ccc; } }
-.detailsGrid_1 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
-.gallery_1 { .mainImg { width: 100%; text-align: center; margin-bottom: 20px; img { width: 100%; height: auto; max-height: 550px; object-fit: contain; } } .thumbs { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; img { width: 90px; height: 90px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; padding: 5px; background: #fff; transition: border-color 0.2s; &:hover, &.active { border-color: $primary; } } } }
-.infoBox_1 {
+{{#if (eq styles.details "1")}}
+.detailsPage { max-width: 1400px; margin: 30px auto 60px; padding: 0 20px; }
+.breadcrumb { font-size: 12px; color: #666; margin-bottom: 30px; text-transform: uppercase; font-weight: 500; a { color: #666; text-decoration: none; transition: color 0.2s; &:hover { color: $primary; } } span { margin: 0 10px; color: #ccc; } }
+.detailsGrid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
+.gallery { .mainImg { width: 100%; text-align: center; margin-bottom: 20px; img { width: 100%; height: auto; max-height: 550px; object-fit: contain; } } .thumbs { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; img { width: 90px; height: 90px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; padding: 5px; background: #fff; transition: border-color 0.2s; &:hover, &.active { border-color: $primary; } } } }
+.infoBox {
     background: transparent;
-    .stateLabel { display: inline-block; font-size: 12px; font-weight: 800; color: #fff; background-color: #333; padding: 4px 10px; border-radius: 3px; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 0.5px; }
-    .titleDetail { font-size: 32px; font-weight: 900; line-height: 1.1; margin: 0 0 15px 0; text-transform: uppercase; color: #111; letter-spacing: -0.5px;}
+    .stateLabel { display: inline-block; font-size: 12px; font-weight: 800; color: #fff; background-color: #333; padding: 4px 10px; border-radius: 3px; text-transform: uppercase; margin-bottom: 15px; }
+    .titleDetail { font-size: 32px; font-weight: 900; line-height: 1.1; margin: 0 0 15px 0; text-transform: uppercase; color: #111; }
     .priceDetail { font-size: 36px; font-weight: 900; color: $primary; margin-bottom: 5px; }
     .taxInfo { font-size: 13px; color: #666; margin-bottom: 30px; display: block; }
-    .attributes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); div { display: flex; flex-direction: column; span { font-size: 11px; color: #888; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; letter-spacing: 0.5px; } strong { font-weight: 800; color: #222; font-size: 15px; } } }
-    .contactBtn { width: 100%; background: $primary; color: #fff; border: none; padding: 18px; font-size: 16px; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: background 0.2s; letter-spacing: 1px; &:hover { background: #c2000d; } }
+    .attributes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 25px; div { display: flex; flex-direction: column; span { font-size: 11px; color: #888; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; } strong { font-weight: 800; color: #222; font-size: 15px; } } }
+    .contactBtn { width: 100%; background: $primary; color: #fff; border: none; padding: 18px; font-size: 16px; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: background 0.2s; &:hover { background: #c2000d; } }
     .financing { margin-top: 15px; text-align: center; button { width: 100%; background: #222; color: #fff; border: none; padding: 15px; font-size: 14px; font-weight: 700; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: background 0.2s; &:hover { background: #000; } } }
 }
+{{/if}}
 
-.detailsPage_2 { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-.breadcrumb_2 { font-size: 14px; margin-bottom: 20px; a { color: $primary; text-decoration: none; } }
-.detailsGrid_2 { display: flex; flex-direction: column; gap: 40px; }
-.gallery_2 { display: flex; overflow-x: auto; gap: 10px; img { height: 350px; border-radius: 10px; object-fit: contain; background: #fff; } }
-.infoBox_2 { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); .titleDetail { font-size: 35px; font-weight: 900; } .priceDetail { font-size: 30px; color: $primary; font-weight: 900; } .attributes { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; div { background: #f9f9f9; padding: 15px; border-radius: 8px; flex: 1; min-width: 100px; text-align: center; span { display: block; font-size: 12px; color: #888; text-transform: uppercase; } strong { font-size: 16px; } } } .contactBtn { background: #000; color: #fff; padding: 15px 30px; border-radius: 30px; border: none; font-size: 16px; font-weight: bold; cursor: pointer; } }
+{{#if (eq styles.details "2")}}
+.detailsPage { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.breadcrumb { font-size: 14px; margin-bottom: 20px; a { color: $primary; text-decoration: none; } }
+.detailsGrid { display: flex; flex-direction: column; gap: 40px; }
+.gallery { display: flex; overflow-x: auto; gap: 10px; img { height: 350px; border-radius: 10px; object-fit: contain; background: #fff; } }
+.infoBox { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); .titleDetail { font-size: 35px; font-weight: 900; } .priceDetail { font-size: 30px; color: $primary; font-weight: 900; } .attributes { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; div { background: #f9f9f9; padding: 15px; border-radius: 8px; flex: 1; min-width: 100px; text-align: center; span { display: block; font-size: 12px; color: #888; text-transform: uppercase; } strong { font-size: 16px; } } } .contactBtn { background: #000; color: #fff; padding: 15px 30px; border-radius: 30px; border: none; font-size: 16px; font-weight: bold; cursor: pointer; } }
+{{/if}}
 
-/* ================== BLOQUE TALLAS ================== */
+/* ================== UTILIDADES FIJAS ================== */
 .sizeSelector { margin-bottom: 25px; h4 { font-size: 12px; text-transform: uppercase; color: #666; margin-bottom: 10px; } .sizeGrid { display: flex; flex-wrap: wrap; gap: 10px; .sizePill { padding: 10px 15px; border: 1px solid $border; background: #fff; border-radius: 3px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s; &:hover { border-color: #333; } &.selected { border-color: $primary; background: $primary; color: #fff; } } } }
-/* ================== SISTEMA DE CUENTAS / CARRITO ================== */
 .authPage { max-width: 500px; margin: 100px auto; padding: 0 20px; }
-.authBox { 
-    background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid $primary;
-    h2 { font-size: 24px; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; }
-    input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; outline: none; &:focus { border-color: $primary; } }
-}
-
+.authBox { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid $primary; h2 { font-size: 24px; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; } input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; outline: none; &:focus { border-color: $primary; } } }
 .badgeCount { position: absolute; top: -8px; right: 0; background: $primary; color: #fff; font-size: 10px; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-
-.heartBtn { 
-    position: absolute; top: 15px; right: 15px; font-size: 22px; cursor: pointer; z-index: 10; transition: transform 0.2s;
-    &:hover { transform: scale(1.2); }
-    &.isFav { color: red; }
-}
+.heartBtn { position: absolute; top: 15px; right: 15px; font-size: 22px; cursor: pointer; z-index: 10; transition: transform 0.2s; &:hover { transform: scale(1.2); } &.isFav { color: red; } }
