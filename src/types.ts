@@ -5,7 +5,7 @@ export interface Moto {
   thumbnail: string;
   images: string[];
   url: string;
-  type?: string;   // El ? significa que es opcional
+  type?: string;   
   year?: number;
   engine?: string;
   license?: string;
